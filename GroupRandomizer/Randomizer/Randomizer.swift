@@ -13,7 +13,13 @@ public class Randomizer {
     // MARK: - Variables
     
     /// Number of groups to split people into
-    public var numberOfGroups: Int
+    public var numberOfGroups: Int {
+        didSet {
+            if numberOfGroups == 0 {
+                numberOfGroups = 2
+            }
+        }
+    }
     
     /// Array containing all the people to split into the groups
     public var people: [Person]
@@ -33,6 +39,11 @@ public class Randomizer {
     /// - Parameter people: People to split up
     public convenience init(people: [Person]) {
         self.init(numberOfGroups: 2, people: people)
+    }
+    
+    public convenience init() {
+        self.init(numberOfGroups: 2, people: [])
+        self.retrieve()
     }
     
     // MARK: - Randomizer
@@ -56,5 +67,17 @@ public class Randomizer {
         let groups = persons.map({Group(people: $0)})
         
         return groups
+    }
+    
+    public func save() {
+        let names = self.people.map({$0.name})
+        Storage.save(names: names)
+        Storage.save(numberOfGroups: self.numberOfGroups)
+    }
+    
+    public func retrieve() {
+        let people = Storage.retrieveNames()
+        self.people = people.map({Person(name: $0)})
+        self.numberOfGroups = Storage.retrieveNumberOfGroups()
     }
 }

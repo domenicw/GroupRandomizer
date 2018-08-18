@@ -13,6 +13,7 @@ public class PersonListTableViewController: UITableViewController {
     
     // MARK: - View Variables
     
+    /// Randomizer
     var randomizer: Randomizer
     
     // MARK: - Initializers
@@ -33,7 +34,7 @@ public class PersonListTableViewController: UITableViewController {
         super.viewDidLoad()
         
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "personCell")
-        self.tableView.separatorInset = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 15)
+        self.tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
     // MARK: - View Interaction
@@ -94,6 +95,7 @@ extension PersonListTableViewController {
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.changeNameOfPerson(index: indexPath.row)
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
     public override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {

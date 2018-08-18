@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B077ED18212881890001CBAA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
 		B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B968492124A5910002410B /* AppDelegate.swift */; };
 		B0B9684C2124A5910002410B /* RandomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9684B2124A5910002410B /* RandomizeViewController.swift */; };
 		B0B968512124A5930002410B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B0B968502124A5930002410B /* Assets.xcassets */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B077ED17212881890001CBAA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B0B968462124A5910002410B /* GroupRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B968492124A5910002410B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B0B9684B2124A5910002410B /* RandomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizeViewController.swift; sourceTree = "<group>"; };
@@ -72,6 +74,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B077ED19212881900001CBAA /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				B077ED17212881890001CBAA /* Storage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		B0B9683D2124A5910002410B = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +107,7 @@
 				B0B968552124A5930002410B /* Info.plist */,
 				B0B968762124B6B90002410B /* Base */,
 				B0B968702124ACE70002410B /* Extensions */,
+				B077ED19212881900001CBAA /* Storage */,
 				B0B968692124A5A40002410B /* Randomizer */,
 				B0B968782124B6DD0002410B /* ViewController */,
 			);
@@ -260,6 +271,7 @@
 				B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */,
 				B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */,
 				B0ED0D972127387C00313603 /* PersonListTableViewController.swift in Sources */,
+				B077ED18212881890001CBAA /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

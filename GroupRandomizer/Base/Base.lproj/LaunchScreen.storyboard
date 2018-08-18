@@ -17,19 +17,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GroupRandomizer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dbf-oc-WRD">
-                                <rect key="frame" x="10" y="311" width="355" height="45.5"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="38"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Randomizer" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jq9-My-kx3">
+                                <rect key="frame" x="10" y="397.5" width="355" height="42"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="F1i-HQ-8bc">
+                                <rect key="frame" x="123.5" y="239.5" width="128" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="9sU-tb-j22"/>
+                                    <constraint firstAttribute="width" constant="128" id="hiM-tc-Irn"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dbf-oc-WRD" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="6UM-6C-vIa"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dbf-oc-WRD" secondAttribute="trailing" constant="10" id="G2L-Zg-GKs"/>
-                            <constraint firstItem="dbf-oc-WRD" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Iho-Lu-GrI"/>
-                            <constraint firstItem="dbf-oc-WRD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="eWK-dL-FDe"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jq9-My-kx3" secondAttribute="trailing" constant="10" id="NYN-1A-DiZ"/>
+                            <constraint firstItem="Jq9-My-kx3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="OcC-Gv-Mp6"/>
+                            <constraint firstItem="F1i-HQ-8bc" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" constant="-30" id="UmF-xj-gVy"/>
+                            <constraint firstItem="Jq9-My-kx3" firstAttribute="top" secondItem="F1i-HQ-8bc" secondAttribute="bottom" constant="30" id="XTr-BC-twB"/>
+                            <constraint firstItem="Jq9-My-kx3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="oZ8-zo-jnU"/>
+                            <constraint firstItem="F1i-HQ-8bc" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="r6e-2a-Xjd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -39,4 +48,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Logo" width="1024" height="1024"/>
+    </resources>
 </document>

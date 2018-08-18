@@ -9,8 +9,4 @@
 import Foundation
 import UIKit
 
-public class PersonListTableViewCell: UITableViewCell {
-    
-    
-    
-}
+public class PersonListTableViewCell: UITableViewCell {}

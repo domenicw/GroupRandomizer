@@ -44,8 +44,8 @@ class RandomizeViewController: UIViewController {
     
     // MARK: - Inizializers
     
-    public init() {
-        self.randomizer = Randomizer(numberOfGroups: 2, people: [])
+    public init(randomizer: Randomizer) {
+        self.randomizer = randomizer
         
         super.init(nibName: nil, bundle: nil)
         self.randomizeButton = createRandomButton()
@@ -78,7 +78,7 @@ class RandomizeViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Randomize", for: .normal)
-        button.backgroundColor = UIColor(red: 28/255, green: 34/255, blue: 200/255, alpha: 0.75)
+        button.backgroundColor = UIColor(named: "lightBlue")
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.lightGray, for: .highlighted)
         button.layer.cornerRadius = 15
@@ -88,7 +88,7 @@ class RandomizeViewController: UIViewController {
     }
     
     private func applyRandomButtonConstraints() {
-        NSLayoutConstraint(item: self.randomizeButton, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottomMargin, multiplier: 1, constant: 0).isActive = true
+        NSLayoutConstraint(item: self.randomizeButton, attribute: .bottom, relatedBy: .equal, toItem: self.view, attribute: .bottomMargin, multiplier: 1, constant: -10).isActive = true
         NSLayoutConstraint(item: self.randomizeButton, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leadingMargin, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: self.randomizeButton, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailingMargin, multiplier: 1, constant: 0).isActive = true
         NSLayoutConstraint(item: self.randomizeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
@@ -98,7 +98,7 @@ class RandomizeViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Groups", for: .normal)
-        button.backgroundColor = UIColor(red: 28/255, green: 34/255, blue: 200/255, alpha: 0.75)
+        button.backgroundColor = UIColor(named: "lightBlue")
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.lightGray, for: .highlighted)
         button.layer.cornerRadius = 15
@@ -118,7 +118,7 @@ class RandomizeViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Persons", for: .normal)
-        button.backgroundColor = UIColor(red: 28/255, green: 34/255, blue: 200/255, alpha: 0.75)
+        button.backgroundColor = UIColor(named: "lightBlue")
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.lightGray, for: .highlighted)
         button.layer.cornerRadius = 15
@@ -157,14 +157,14 @@ class RandomizeViewController: UIViewController {
     
     private func createAddItem() -> UIBarButtonItem {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addPerson))
-        addButton.tintColor = UIColor(red: 28/255, green: 34/255, blue: 200/255, alpha: 0.75)
+        addButton.tintColor = UIColor(named: "lightBlue")
         
         return addButton
     }
     
     private func createNumberOfGroupsItem() -> UIBarButtonItem {
         let numberButton = UIBarButtonItem(title: "Nr.", style: .done, target: self, action: #selector(self.changeNumberOfGroups))
-        numberButton.tintColor = UIColor(red: 28/255, green: 34/255, blue: 200/255, alpha: 0.75)
+        numberButton.tintColor = UIColor(named: "lightBlue")
         
         return numberButton
     }
@@ -214,18 +214,18 @@ class RandomizeViewController: UIViewController {
         
         self.view.backgroundColor = .white
         self.title = "Randomizer"
-        
-        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     // MARK: - View Interaction
     
     @objc public func randomizeGroups() {
-        print("🚨 Randomizing groups")
+        debugPrint("🚨 Randomizing groups")
         
         let groups = self.randomizer.randomize()
         
@@ -234,7 +234,7 @@ class RandomizeViewController: UIViewController {
     }
     
     @objc public func addPerson() {
-        print("🚨 Adding person")
+        debugPrint("🚨 Adding person")
         
         let alert = UIAlertController(title: "Add Person", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
@@ -257,11 +257,12 @@ class RandomizeViewController: UIViewController {
     }
     
     @objc public func changeNumberOfGroups() {
-        print("🚨 Changeing number of groups")
+        debugPrint("🚨 Changeing number of groups")
         
         let alert = UIAlertController(title: "Number of Groups", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.text = "\(self.randomizer.numberOfGroups)"
+            textField.keyboardType = UIKeyboardType.decimalPad
         }
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
