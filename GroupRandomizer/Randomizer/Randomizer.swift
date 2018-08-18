@@ -45,11 +45,11 @@ public class Randomizer {
             person.randomToken = token
         }
         
-        people.sort(by: {$0.randomToken < $1.randomToken})
+        let sorted = people.sorted(by: {$0.randomToken < $1.randomToken})
         
         var persons: [[Person]] = Array.init(repeating: [], count: self.numberOfGroups)
         
-        for (index, person) in people.enumerated() {
+        for (index, person) in sorted.enumerated() {
             persons[index % self.numberOfGroups].append(person)
         }
         
