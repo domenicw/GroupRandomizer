@@ -21,21 +21,12 @@ public class PersonListTableViewController: UITableViewController {
         self.randomizer = randomizer
         
         super.init(nibName: nil, bundle: nil)
-        
-        //self.addAddButton()
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - View creation
-    /*
-    private func addAddButton() {
-        let addItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addPerson))
-        self.navigationItem.rightBarButtonItem = addItem
-    }
-    */
     // MARK: - View Setup
     
     public override func viewDidLoad() {
@@ -46,19 +37,19 @@ public class PersonListTableViewController: UITableViewController {
     }
     
     // MARK: - View Interaction
-    /*
-    @objc private func addPerson() {
-        debugPrint("🚨 Adding Person")
+    
+    @objc private func changeNameOfPerson(index: Int) {
+        debugPrint("🚨 Changing Persons Name")
         
-        let alert = UIAlertController(title: "Add Person", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: "Change Name", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Name of person"
+            textField.text = self.randomizer.people[index].name
         }
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
             if let name = alert.textFields?[0].text {
-                let person = Person(name: name)
-                self.randomizer.people.append(person)
+                self.randomizer.people[index].name = name
                 self.tableView.reloadData()
             }
         }
@@ -67,9 +58,10 @@ public class PersonListTableViewController: UITableViewController {
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         
-        self.present(alert, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(alert, animated: true, completion: nil)
+        }
     }
- */
 }
 
 extension PersonListTableViewController {
@@ -80,7 +72,7 @@ extension PersonListTableViewController {
         }
         
         cell.textLabel?.text = self.randomizer.people[indexPath.row].name
-        cell.selectionStyle = .none
+        cell.selectionStyle = .default
         
         return cell
     }
@@ -100,8 +92,11 @@ extension PersonListTableViewController {
         }
     }
     
+    public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.changeNameOfPerson(index: indexPath.row)
+    }
+    
     public override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-    
 }
