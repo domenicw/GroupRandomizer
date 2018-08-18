@@ -51,6 +51,7 @@
 		B0ED0D962127387C00313603 /* PersonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
 		B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewCell.swift; sourceTree = "<group>"; };
 		B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
+		B0ED0D9C2128285700313603 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +75,7 @@
 		B0B9683D2124A5910002410B = {
 			isa = PBXGroup;
 			children = (
+				B0ED0D9C2128285700313603 /* README.md */,
 				B0B968482124A5910002410B /* GroupRandomizer */,
 				B0B9685D2124A5930002410B /* GroupRandomizerTests */,
 				B0B968472124A5910002410B /* Products */,
