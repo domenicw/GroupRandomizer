@@ -69,12 +69,16 @@ public class Randomizer {
         return groups
     }
     
+    // MARK: - Persistant Storage
+    
+    /// Saves names of people and numberOfGroups to UserDefaults
     public func save() {
         let names = self.people.map({$0.name})
         Storage.save(names: names)
         Storage.save(numberOfGroups: self.numberOfGroups)
     }
     
+    /// Retrieves names of people and numberOfGroups from UserDefaults
     public func retrieve() {
         let people = Storage.retrieveNames()
         self.people = people.map({Person(name: $0)})
