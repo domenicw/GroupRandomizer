@@ -21,6 +21,7 @@ public class GroupsListTableViewController: UITableViewController {
             self.tableView.reloadData()
         }
     }
+    
     // MARK: - Initializers
     
     public init(groups: [Group]) {
@@ -33,6 +34,8 @@ public class GroupsListTableViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - View Creation
+    
     // MARK: - View Set up
     
     public override func viewDidLoad() {
@@ -41,6 +44,8 @@ public class GroupsListTableViewController: UITableViewController {
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 }
+
+// MARK: - Class Extension
 
 extension GroupsListTableViewController {
     

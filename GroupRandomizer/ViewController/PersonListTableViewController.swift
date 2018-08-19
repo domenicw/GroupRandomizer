@@ -65,6 +65,8 @@ public class PersonListTableViewController: UITableViewController {
     }
 }
 
+// MARK: - Class Extension
+
 extension PersonListTableViewController {
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

@@ -176,7 +176,7 @@ class RandomizeViewController: UIViewController {
         self.navigationItem.rightBarButtonItems = [addButton, numberButton]
     }
     
-    // MARK: - Child view display
+    // MARK: - Child controller display
     
     private func display(child: UIViewController) {
         self.addChild(child)
