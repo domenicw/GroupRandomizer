@@ -25,6 +25,9 @@
 		B0BFDD322137F7F800656396 /* GroupsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD312137F7F800656396 /* GroupsNavigator.swift */; };
 		B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD332137FA1F00656396 /* RandomizerModel.swift */; };
 		B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */; };
+		B0BFDD3721381EEC00656396 /* RandomizerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD332137FA1F00656396 /* RandomizerModel.swift */; };
+		B0BFDD3821381F0900656396 /* RandomizerModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */; };
+		B0BFDD3921381F0D00656396 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
 		B0ED0D972127387C00313603 /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D962127387C00313603 /* PersonListTableViewController.swift */; };
 		B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */; };
 		B0ED0D9B2128171900313603 /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */; };
@@ -308,7 +311,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B968742124B1110002410B /* Person.swift in Sources */,
+				B0BFDD3921381F0D00656396 /* Storage.swift in Sources */,
+				B0BFDD3721381EEC00656396 /* RandomizerModel.swift in Sources */,
 				B0B968732124B10E0002410B /* Randomizer.swift in Sources */,
+				B0BFDD3821381F0900656396 /* RandomizerModelDelegate.swift in Sources */,
 				B0B9685F2124A5930002410B /* RandomizerTests.swift in Sources */,
 				B0B968752124B1140002410B /* Group.swift in Sources */,
 			);

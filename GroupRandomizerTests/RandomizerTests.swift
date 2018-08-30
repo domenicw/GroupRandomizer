@@ -27,14 +27,15 @@ class RandomizerTests: XCTestCase {
     }
 
     func testRandomizer() {
-        let randomizer = Randomizer(numberOfGroups: self.numberOfGroups, people: self.people)
-        let groups = randomizer.randomize()
+        let model = RandomizerModel(numberOfGroups: self.numberOfGroups, people: self.people, groups: [])
         
-        print(groups: groups)
+        Randomizer.randomize(model: model)
         
-        checkRandomToken(groups: groups)
-        checkNumberOfGroups(groups: groups)
-        checkPeopleDistortion(groups: groups)
+        print(groups: model.groups)
+        
+        checkRandomToken(groups: model.groups)
+        checkNumberOfGroups(groups: model.groups)
+        checkPeopleDistortion(groups: model.groups)
     }
     
     func checkRandomToken(groups: [Group]) {
@@ -63,10 +64,10 @@ class RandomizerTests: XCTestCase {
     }
     
     func test0Groups() {
-        let randomizer = Randomizer(numberOfGroups: 1, people: [])
-        XCTAssert(randomizer.numberOfGroups == 1)
-        randomizer.numberOfGroups == 0
-        XCTAssert(randomizer.numberOfGroups != 0)
+        let model = RandomizerModel(numberOfGroups: 2, people: [], groups: [])
+        XCTAssert(model.numberOfGroups == 2)
+        model.numberOfGroups = 0
+        XCTAssert(model.numberOfGroups != 0)
     }
 
 }
