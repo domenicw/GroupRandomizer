@@ -1,5 +1,5 @@
 //
-//  GroupsNavigator.swift
+//  PeopleNavigator.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 30.08.18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class GroupsNavigator: Navigator {
+public class PeopleNavigator: Navigator {
     
     // MARK: - Variables
     
@@ -27,15 +27,17 @@ public class GroupsNavigator: Navigator {
         
         self.model = model
         
-        let randomizeController = RandomizeViewController(model: model, activeChild: .group)
+        let randomizeController = RandomizeViewController(model: model, activeChild: .person)
         randomizeController.delegate = self
         self.navigationController.pushViewController(randomizeController, animated: false)
     }
+    
 }
 
-extension GroupsNavigator: RandomizeViewControllerDelegate {
+extension PeopleNavigator: RandomizeViewControllerDelegate {
     
     public func randomize() {
         self.delegate?.randomize()
     }
+    
 }

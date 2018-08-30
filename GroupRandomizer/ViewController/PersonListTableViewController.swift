@@ -22,10 +22,18 @@ public class PersonListTableViewController: UITableViewController {
         self.model = model
         
         super.init(nibName: nil, bundle: nil)
+        
+        self.model.add(delegate: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Deinitializers
+    
+    deinit {
+        self.model.remove(delegate: self)
     }
     
     // MARK: - View Setup
@@ -103,4 +111,17 @@ extension PersonListTableViewController {
     public override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
+}
+
+extension PersonListTableViewController: RandomizerModelDelegate {
+    
+    public func groupsDidChange() {}
+    
+    public func peopleDidChange() {
+        self.tableView.reloadData()
+    }
+    
+    
+    
+    
 }

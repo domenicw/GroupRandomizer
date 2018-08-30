@@ -28,6 +28,9 @@
 		B0BFDD3721381EEC00656396 /* RandomizerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD332137FA1F00656396 /* RandomizerModel.swift */; };
 		B0BFDD3821381F0900656396 /* RandomizerModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */; };
 		B0BFDD3921381F0D00656396 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
+		B0BFDD3B2138249900656396 /* PeopleNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3A2138249900656396 /* PeopleNavigator.swift */; };
+		B0BFDD3D2138286C00656396 /* RandomizeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */; };
+		B0BFDD3F21382A0500656396 /* RootNavigatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */; };
 		B0ED0D972127387C00313603 /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D962127387C00313603 /* PersonListTableViewController.swift */; };
 		B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */; };
 		B0ED0D9B2128171900313603 /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */; };
@@ -63,6 +66,9 @@
 		B0BFDD312137F7F800656396 /* GroupsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsNavigator.swift; sourceTree = "<group>"; };
 		B0BFDD332137FA1F00656396 /* RandomizerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerModel.swift; sourceTree = "<group>"; };
 		B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerModelDelegate.swift; sourceTree = "<group>"; };
+		B0BFDD3A2138249900656396 /* PeopleNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleNavigator.swift; sourceTree = "<group>"; };
+		B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizeViewControllerDelegate.swift; sourceTree = "<group>"; };
+		B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigatorDelegate.swift; sourceTree = "<group>"; };
 		B0ED0D962127387C00313603 /* PersonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
 		B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewCell.swift; sourceTree = "<group>"; };
 		B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
@@ -174,6 +180,7 @@
 				B0ED0D962127387C00313603 /* PersonListTableViewController.swift */,
 				B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */,
 				B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */,
+				B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -183,7 +190,9 @@
 			children = (
 				B0BFDD2D2137ED3F00656396 /* Navigator.swift */,
 				B0BFDD2F2137EDD000656396 /* RootNavigator.swift */,
+				B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */,
 				B0BFDD312137F7F800656396 /* GroupsNavigator.swift */,
+				B0BFDD3A2138249900656396 /* PeopleNavigator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -288,7 +297,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0BFDD3B2138249900656396 /* PeopleNavigator.swift in Sources */,
 				B0B9686B2124A5BB0002410B /* Group.swift in Sources */,
+				B0BFDD3F21382A0500656396 /* RootNavigatorDelegate.swift in Sources */,
 				B0BFDD302137EDD000656396 /* RootNavigator.swift in Sources */,
 				B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */,
 				B0BFDD322137F7F800656396 /* GroupsNavigator.swift in Sources */,
@@ -300,6 +311,7 @@
 				B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */,
 				B0B9686D2124A6010002410B /* Person.swift in Sources */,
 				B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */,
+				B0BFDD3D2138286C00656396 /* RandomizeViewControllerDelegate.swift in Sources */,
 				B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */,
 				B0ED0D972127387C00313603 /* PersonListTableViewController.swift in Sources */,
 				B077ED18212881890001CBAA /* Storage.swift in Sources */,

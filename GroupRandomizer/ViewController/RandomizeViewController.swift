@@ -15,55 +15,43 @@ class RandomizeViewController: UIViewController {
     /// Randomize button
     public var randomizeButton: UIButton!
     
-    /// Groups button
-    public var groupsButton: UIButton!
-    
-    /// Persons button
-    public var personsButton: UIButton!
-    
-    /// Persons view controller
-    public var personsViewController: PersonListTableViewController!
-    
-    /// Groups view controller
-    public var groupsViewController: GroupsListTableViewController!
-    
     // MARK: - Variables
+    
+    public var delegate: RandomizeViewControllerDelegate?
     
     /// Randomizer
     public let model: RandomizerModel
     
     /// Indicates current active child
-    private var activeChild: ActiveChildViewController = .person
+    private let activeChild: ActiveChildViewController
     
     // MARK: - Private types
     
-    fileprivate enum ActiveChildViewController {
+    public enum ActiveChildViewController {
         case person
         case group
     }
     
     // MARK: - Inizializers
     
-    public init(model: RandomizerModel) {
+    public init(model: RandomizerModel, activeChild: ActiveChildViewController) {
         self.model = model
+        self.activeChild = activeChild
         
         super.init(nibName: nil, bundle: nil)
+        
         self.randomizeButton = createRandomButton()
         self.view.addSubview(self.randomizeButton)
         
-        self.groupsButton = self.createGroupsButton()
-        self.view.addSubview(self.groupsButton)
-        
-        self.personsButton = self.createPersonsButton()
-        self.view.addSubview(self.personsButton)
-        
-        self.personsViewController = self.createPersonListViewController()
-        self.groupsViewController = self.createGroupsListViewController()
+        if activeChild == .person {
+            let personsViewController = self.createPersonListViewController()
+            self.display(child: personsViewController)
+        } else {
+            let groupsViewController = self.createGroupsListViewController()
+            self.display(child: groupsViewController)
+        }
         
         self.applyRandomButtonConstraints()
-        self.applyPersonsButtonConstraints()
-        self.applyGroupsButtonConstraints()
-        self.display(child: self.personsViewController)
         
         self.addBarButtons()
     }
@@ -94,46 +82,6 @@ class RandomizeViewController: UIViewController {
         NSLayoutConstraint(item: self.randomizeButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
     }
     
-    private func createGroupsButton() -> UIButton {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Groups", for: .normal)
-        button.backgroundColor = UIColor(named: "lightBlue")
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.lightGray, for: .highlighted)
-        button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(self.showGroups), for: .touchUpInside)
-        
-        return button
-    }
-    
-    private func applyGroupsButtonConstraints() {
-        NSLayoutConstraint(item: self.groupsButton, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .topMargin, multiplier: 1, constant: 10).isActive = true
-        NSLayoutConstraint(item: self.groupsButton, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leadingMargin, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.groupsButton, attribute: .trailing, relatedBy: .equal, toItem: self.personsButton, attribute: .leading, multiplier: 1, constant: -10).isActive = true
-        NSLayoutConstraint(item: self.groupsButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
-    }
-    
-    private func createPersonsButton() -> UIButton {
-        let button = UIButton()
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Persons", for: .normal)
-        button.backgroundColor = UIColor(named: "lightBlue")
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.lightGray, for: .highlighted)
-        button.layer.cornerRadius = 15
-        button.addTarget(self, action: #selector(self.showPersons), for: .touchUpInside)
-        
-        return button
-    }
-    
-    private func applyPersonsButtonConstraints() {
-        NSLayoutConstraint(item: self.personsButton, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 50).isActive = true
-        NSLayoutConstraint(item: self.personsButton, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .topMargin, multiplier: 1, constant: 10).isActive = true
-        NSLayoutConstraint(item: self.personsButton, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailingMargin, multiplier: 1, constant: 0).isActive = true
-        NSLayoutConstraint(item: self.personsButton, attribute: .width, relatedBy: .equal, toItem: self.groupsButton, attribute: .width, multiplier: 1, constant: 0).isActive = true
-    }
-    
     private func createPersonListViewController() -> PersonListTableViewController {
         let view = PersonListTableViewController(model: self.model)
         view.view.translatesAutoresizingMaskIntoConstraints = false
@@ -149,7 +97,7 @@ class RandomizeViewController: UIViewController {
     }
  
     private func applyChildViewControllerConstraints(viewController: UIViewController, isActive: Bool) {
-        NSLayoutConstraint(item: viewController.view, attribute: .top, relatedBy: .equal, toItem: self.personsButton, attribute: .bottom, multiplier: 1, constant: 10).isActive = isActive
+        NSLayoutConstraint(item: viewController.view, attribute: .top, relatedBy: .equal, toItem: self.view, attribute: .topMargin, multiplier: 1, constant: 0).isActive = isActive
         NSLayoutConstraint(item: viewController.view, attribute: .leading, relatedBy: .equal, toItem: self.view, attribute: .leading, multiplier: 1, constant: 0).isActive = isActive
         NSLayoutConstraint(item: viewController.view, attribute: .trailing, relatedBy: .equal, toItem: self.view, attribute: .trailing, multiplier: 1, constant: 0).isActive = isActive
         NSLayoutConstraint(item: viewController.view, attribute: .bottom, relatedBy: .equal, toItem: self.randomizeButton, attribute: .top, multiplier: 1, constant: -10).isActive = isActive
@@ -170,10 +118,15 @@ class RandomizeViewController: UIViewController {
     }
     
     private func addBarButtons() {
-        let addButton = createAddItem()
-        let numberButton = createNumberOfGroupsItem()
+        var items: [UIBarButtonItem] = []
         
-        self.navigationItem.rightBarButtonItems = [addButton, numberButton]
+        if self.activeChild == .person {
+            items = [createAddItem()]
+        } else {
+            items = [createNumberOfGroupsItem()]
+        }
+        
+        self.navigationItem.rightBarButtonItems = items
     }
     
     // MARK: - Child controller display
@@ -185,35 +138,17 @@ class RandomizeViewController: UIViewController {
         child.didMove(toParent: self)
     }
     
-    private func hide(child: UIViewController) {
-        child.willMove(toParent: nil)
-        child.view.removeFromSuperview()
-        self.applyChildViewControllerConstraints(viewController: child, isActive: false)
-        child.removeFromParent()
-    }
-    
-    private func display(child: ActiveChildViewController) {
-        guard child != self.activeChild else {
-            return
-        }
-        if self.activeChild == .person {
-            self.hide(child: self.personsViewController)
-            self.display(child: self.groupsViewController)
-            self.activeChild = .group
-        } else {
-            self.hide(child: self.groupsViewController)
-            self.display(child: self.personsViewController)
-            self.activeChild = .person
-        }
-    }
-    
     // MARK: - View setup
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
-        self.title = "Randomizer"
+        if self.activeChild == .person {
+            self.title = "People"
+        } else {
+            self.title = "Groups"
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -227,9 +162,7 @@ class RandomizeViewController: UIViewController {
     @objc public func randomizeGroups() {
         debugPrint("🚨 Randomizing groups")
         
-        Randomizer.randomize(model: self.model)
-        
-        self.display(child: .group)
+        self.delegate?.randomize()
     }
     
     @objc public func addPerson() {
@@ -244,7 +177,6 @@ class RandomizeViewController: UIViewController {
             if let name = alert.textFields?[0].text {
                 let person = Person(name: name)
                 self.model.people.append(person)
-                self.personsViewController.tableView.reloadData()
             }
         }
         alert.addAction(saveAction)
@@ -275,13 +207,5 @@ class RandomizeViewController: UIViewController {
         alert.addAction(cancelAction)
         
         self.present(alert, animated: true, completion: nil)
-    }
-    
-    @objc public func showGroups() {
-        self.display(child: .group)
-    }
-    
-    @objc private func showPersons() {
-        self.display(child: .person)
     }
 }

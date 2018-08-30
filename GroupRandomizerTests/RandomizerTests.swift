@@ -63,7 +63,7 @@ class RandomizerTests: XCTestCase {
         }
     }
     
-    func test0Groups() {
+    func testZeroGroups() {
         let model = RandomizerModel(numberOfGroups: 2, people: [], groups: [])
         XCTAssert(model.numberOfGroups == 2)
         model.numberOfGroups = 0

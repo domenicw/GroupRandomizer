@@ -14,16 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     let model: RandomizerModel = RandomizerModel()
+    var navigator: RootNavigator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        let nav = UINavigationController()
-        let view = RandomizeViewController(model: self.model)
-        nav.pushViewController(view, animated: false)
-        
         let window = UIWindow(frame: UIScreen.main.bounds)
         self.window = window
-        window.rootViewController = nav
+        
+        let navigator = RootNavigator(window: window, model: self.model)
+        self.navigator = navigator
+        
         window.makeKeyAndVisible()
         
         return true

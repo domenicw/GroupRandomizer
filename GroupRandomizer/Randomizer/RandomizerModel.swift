@@ -22,7 +22,11 @@ public class RandomizerModel {
         }
     }
     
-    public var people: [Person]
+    public var people: [Person] {
+        didSet {
+            self.delegates.forEach({ $0?.peopleDidChange() })
+        }
+    }
     
     public var groups: [Group] {
         didSet {
@@ -58,6 +62,7 @@ public class RandomizerModel {
         let people = Storage.retrieveNames()
         self.people = people.map({Person(name: $0)})
         self.numberOfGroups = Storage.retrieveNumberOfGroups()
+        Randomizer.randomize(model: self)
     }
     
     // MARK: - Delegation
