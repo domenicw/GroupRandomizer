@@ -14,12 +14,12 @@ public class PersonListTableViewController: UITableViewController {
     // MARK: - View Variables
     
     /// Randomizer
-    var randomizer: Randomizer
+    var model: RandomizerModel
     
     // MARK: - Initializers
     
-    public init(randomizer: Randomizer) {
-        self.randomizer = randomizer
+    public init(model: RandomizerModel) {
+        self.model = model
         
         super.init(nibName: nil, bundle: nil)
     }
@@ -45,12 +45,12 @@ public class PersonListTableViewController: UITableViewController {
         let alert = UIAlertController(title: "Change Name", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Name of person"
-            textField.text = self.randomizer.people[index].name
+            textField.text = self.model.people[index].name
         }
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
             if let name = alert.textFields?[0].text {
-                self.randomizer.people[index].name = name
+                self.model.people[index].name = name
                 self.tableView.reloadData()
             }
         }
@@ -74,14 +74,14 @@ extension PersonListTableViewController {
             return UITableViewCell()
         }
         
-        cell.textLabel?.text = self.randomizer.people[indexPath.row].name
+        cell.textLabel?.text = self.model.people[indexPath.row].name
         cell.selectionStyle = .default
         
         return cell
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.randomizer.people.count
+        return self.model.people.count
     }
     
     public override func numberOfSections(in tableView: UITableView) -> Int {
@@ -90,7 +90,7 @@ extension PersonListTableViewController {
     
     public override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.randomizer.people.remove(at: indexPath.row)
+            self.model.people.remove(at: indexPath.row)
             self.tableView.reloadData()
         }
     }

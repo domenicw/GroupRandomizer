@@ -13,12 +13,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let randomizer: Randomizer = Randomizer()
+    let model: RandomizerModel = RandomizerModel()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         let nav = UINavigationController()
-        let view = RandomizeViewController(randomizer: self.randomizer)
+        let view = RandomizeViewController(model: self.model)
         nav.pushViewController(view, animated: false)
         
         let window = UIWindow(frame: UIScreen.main.bounds)
@@ -33,14 +33,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
         debugPrint("Resign")
-        self.randomizer.save()
+        self.model.save()
     }
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         debugPrint("Enter Backgroud")
-        self.randomizer.save()
+        self.model.save()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         debugPrint("🚨 Saving data")
-        self.randomizer.save()
+        self.model.save()
     }
 
 

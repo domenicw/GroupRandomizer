@@ -20,6 +20,11 @@
 		B0B968732124B10E0002410B /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686E2124A7BB0002410B /* Randomizer.swift */; };
 		B0B968742124B1110002410B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686C2124A6010002410B /* Person.swift */; };
 		B0B968752124B1140002410B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686A2124A5BB0002410B /* Group.swift */; };
+		B0BFDD2E2137ED3F00656396 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD2D2137ED3F00656396 /* Navigator.swift */; };
+		B0BFDD302137EDD000656396 /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD2F2137EDD000656396 /* RootNavigator.swift */; };
+		B0BFDD322137F7F800656396 /* GroupsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD312137F7F800656396 /* GroupsNavigator.swift */; };
+		B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD332137FA1F00656396 /* RandomizerModel.swift */; };
+		B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */; };
 		B0ED0D972127387C00313603 /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D962127387C00313603 /* PersonListTableViewController.swift */; };
 		B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */; };
 		B0ED0D9B2128171900313603 /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */; };
@@ -50,6 +55,11 @@
 		B0B9686C2124A6010002410B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		B0B9686E2124A7BB0002410B /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		B0B968712124ACFB0002410B /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
+		B0BFDD2D2137ED3F00656396 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		B0BFDD2F2137EDD000656396 /* RootNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigator.swift; sourceTree = "<group>"; };
+		B0BFDD312137F7F800656396 /* GroupsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsNavigator.swift; sourceTree = "<group>"; };
+		B0BFDD332137FA1F00656396 /* RandomizerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerModel.swift; sourceTree = "<group>"; };
+		B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerModelDelegate.swift; sourceTree = "<group>"; };
 		B0ED0D962127387C00313603 /* PersonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
 		B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewCell.swift; sourceTree = "<group>"; };
 		B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +114,7 @@
 		B0B968482124A5910002410B /* GroupRandomizer */ = {
 			isa = PBXGroup;
 			children = (
+				B0BFDD2C2137ED2900656396 /* Navigation */,
 				B0B968552124A5930002410B /* Info.plist */,
 				B0B968762124B6B90002410B /* Base */,
 				B0B968702124ACE70002410B /* Extensions */,
@@ -129,6 +140,8 @@
 				B0B9686A2124A5BB0002410B /* Group.swift */,
 				B0B9686C2124A6010002410B /* Person.swift */,
 				B0B9686E2124A7BB0002410B /* Randomizer.swift */,
+				B0BFDD332137FA1F00656396 /* RandomizerModel.swift */,
+				B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */,
 			);
 			path = Randomizer;
 			sourceTree = "<group>";
@@ -160,6 +173,16 @@
 				B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		B0BFDD2C2137ED2900656396 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				B0BFDD2D2137ED3F00656396 /* Navigator.swift */,
+				B0BFDD2F2137EDD000656396 /* RootNavigator.swift */,
+				B0BFDD312137F7F800656396 /* GroupsNavigator.swift */,
+			);
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,10 +286,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0B9686B2124A5BB0002410B /* Group.swift in Sources */,
+				B0BFDD302137EDD000656396 /* RootNavigator.swift in Sources */,
+				B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */,
+				B0BFDD322137F7F800656396 /* GroupsNavigator.swift in Sources */,
 				B0ED0D9B2128171900313603 /* GroupsListTableViewController.swift in Sources */,
 				B0B968722124ACFB0002410B /* Array+Extensions.swift in Sources */,
 				B0B9686F2124A7BB0002410B /* Randomizer.swift in Sources */,
 				B0B9684C2124A5910002410B /* RandomizeViewController.swift in Sources */,
+				B0BFDD2E2137ED3F00656396 /* Navigator.swift in Sources */,
+				B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */,
 				B0B9686D2124A6010002410B /* Person.swift in Sources */,
 				B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */,
 				B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */,

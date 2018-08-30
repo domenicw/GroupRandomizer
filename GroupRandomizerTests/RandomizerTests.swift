@@ -61,5 +61,12 @@ class RandomizerTests: XCTestCase {
             }
         }
     }
+    
+    func test0Groups() {
+        let randomizer = Randomizer(numberOfGroups: 1, people: [])
+        XCTAssert(randomizer.numberOfGroups == 1)
+        randomizer.numberOfGroups == 0
+        XCTAssert(randomizer.numberOfGroups != 0)
+    }
 
 }

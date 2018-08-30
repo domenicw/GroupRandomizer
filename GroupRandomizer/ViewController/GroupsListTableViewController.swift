@@ -15,23 +15,27 @@ public class GroupsListTableViewController: UITableViewController {
     
     // MARK: - Variables
     
-    /// Randomizer
-    public var groups: [Group] {
-        didSet {
-            self.tableView.reloadData()
-        }
-    }
+    /// Randomizer model
+    public var model: RandomizerModel
     
     // MARK: - Initializers
     
-    public init(groups: [Group]) {
-        self.groups = groups
+    public init(model: RandomizerModel) {
+        self.model = model
         
         super.init(nibName: nil, bundle: nil)
+        
+        model.add(delegate: self)
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Deinitializer
+    
+    deinit {
+        self.model.remove(delegate: self)
     }
     
     // MARK: - View Creation
@@ -50,11 +54,11 @@ public class GroupsListTableViewController: UITableViewController {
 extension GroupsListTableViewController {
     
     public override func numberOfSections(in tableView: UITableView) -> Int {
-        return self.groups.count
+        return self.model.groups.count
     }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.groups[section].people.count
+        return self.model.groups[section].people.count
     }
     
     public override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -67,9 +71,18 @@ extension GroupsListTableViewController {
             return UITableViewCell()
         }
         
-        cell.textLabel?.text = self.groups[indexPath.section].people[indexPath.row].name
+        cell.textLabel?.text = self.model.groups[indexPath.section].people[indexPath.row].name
         cell.selectionStyle = .none
         
         return cell
     }
+}
+
+extension GroupsListTableViewController: RandomizerModelDelegate {
+    
+    public func groupsDidChange() {
+        self.tableView.reloadData()
+    }
+    
+    public func peopleDidChange() {}
 }

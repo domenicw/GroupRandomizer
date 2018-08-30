@@ -30,7 +30,7 @@ class RandomizeViewController: UIViewController {
     // MARK: - Variables
     
     /// Randomizer
-    public let randomizer: Randomizer
+    public let model: RandomizerModel
     
     /// Indicates current active child
     private var activeChild: ActiveChildViewController = .person
@@ -44,8 +44,8 @@ class RandomizeViewController: UIViewController {
     
     // MARK: - Inizializers
     
-    public init(randomizer: Randomizer) {
-        self.randomizer = randomizer
+    public init(model: RandomizerModel) {
+        self.model = model
         
         super.init(nibName: nil, bundle: nil)
         self.randomizeButton = createRandomButton()
@@ -135,14 +135,14 @@ class RandomizeViewController: UIViewController {
     }
     
     private func createPersonListViewController() -> PersonListTableViewController {
-        let view = PersonListTableViewController(randomizer: self.randomizer)
+        let view = PersonListTableViewController(model: self.model)
         view.view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }
     
     private func createGroupsListViewController() -> GroupsListTableViewController {
-        let view = GroupsListTableViewController(groups: [])
+        let view = GroupsListTableViewController(model: self.model)
         view.view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
@@ -227,9 +227,8 @@ class RandomizeViewController: UIViewController {
     @objc public func randomizeGroups() {
         debugPrint("🚨 Randomizing groups")
         
-        let groups = self.randomizer.randomize()
+        Randomizer.randomize(model: self.model)
         
-        self.groupsViewController.groups = groups
         self.display(child: .group)
     }
     
@@ -244,7 +243,7 @@ class RandomizeViewController: UIViewController {
         let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
             if let name = alert.textFields?[0].text {
                 let person = Person(name: name)
-                self.randomizer.people.append(person)
+                self.model.people.append(person)
                 self.personsViewController.tableView.reloadData()
             }
         }
@@ -261,13 +260,13 @@ class RandomizeViewController: UIViewController {
         
         let alert = UIAlertController(title: "Number of Groups", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.text = "\(self.randomizer.numberOfGroups)"
+            textField.text = "\(self.model.numberOfGroups)"
             textField.keyboardType = UIKeyboardType.decimalPad
         }
         
         let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
             if let numberOfGroups = alert.textFields?[0].text {
-                self.randomizer.numberOfGroups = Int(numberOfGroups) ?? 2
+                self.model.numberOfGroups = Int(numberOfGroups) ?? 2
             }
         }
         alert.addAction(saveAction)
