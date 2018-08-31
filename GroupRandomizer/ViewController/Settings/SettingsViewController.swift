@@ -19,11 +19,14 @@ public class SettingsViewController: UITableViewController {
     
     fileprivate var cellIdentifier = "cell"
     
+    public var delegate: SettingsViewControllerDelegate?
+    
     // MARK: - Initializers
     
     public init(model: SettingsModel) {
         self.model = model
         super.init(style: .grouped)
+        self.model.delegate = self
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -33,13 +36,6 @@ public class SettingsViewController: UITableViewController {
     // MARK: - View Creation
     
     // MARK: - View Setup
-    
-    public override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
-        
-    }
     
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -77,13 +73,18 @@ extension SettingsViewController {
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) else {
-            return UITableViewCell()
-        }
         
         let cellModel = self.model.sectionModels[indexPath.section].cellModels[indexPath.row]
         
+        let cell: UITableViewCell = {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: cellModel.cellType.reuseIdentifier()) else {
+                return UITableViewCell(style: cellModel.cellType.style(), reuseIdentifier: cellModel.cellType.reuseIdentifier())
+            }
+            return cell
+        }()
+        
         cell.textLabel?.text = cellModel.text
+        cell.detailTextLabel?.text = cellModel.detailText
         cell.textLabel?.numberOfLines = 0
         cell.accessoryType = cellModel.action.indicator()
         cell.tintColor = UIColor(named: "lightBlue")
@@ -107,7 +108,17 @@ extension SettingsViewController {
         let cell = tableView.cellForRow(at: indexPath)
         cell?.isSelected = false
         
-        print(cellModel.action)
+        self.delegate?.purchaseTip(index: indexPath.row)
+    }
+    
+}
+
+// MARK: - SettingsViewController model delegate
+
+extension SettingsViewController: SettingsModelDelegate {
+    
+    public func modelDidChange() {
+        self.tableView.reloadData()
     }
     
 }

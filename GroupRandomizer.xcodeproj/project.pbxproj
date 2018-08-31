@@ -14,6 +14,14 @@
 		B02CB1522139364D005CAFBB /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1512139364D005CAFBB /* SettingsCellModel.swift */; };
 		B02CB15421393659005CAFBB /* SettingsSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB15321393659005CAFBB /* SettingsSectionModel.swift */; };
 		B02CB157213941FF005CAFBB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB156213941FF005CAFBB /* Bundle+Extension.swift */; };
+		B02CB15A213943A4005CAFBB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B02CB159213943A4005CAFBB /* StoreKit.framework */; };
+		B02CB1632139455C005CAFBB /* SettingsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1622139455C005CAFBB /* SettingsViewControllerDelegate.swift */; };
+		B02CB165213946F0005CAFBB /* SKIAPItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB164213946F0005CAFBB /* SKIAPItem.swift */; };
+		B02CB16721394777005CAFBB /* SKIAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16621394777005CAFBB /* SKIAPHelper.swift */; };
+		B02CB169213950C7005CAFBB /* SKStoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB168213950C7005CAFBB /* SKStoreDelegate.swift */; };
+		B02CB16B213951E6005CAFBB /* SKRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16A213951E6005CAFBB /* SKRating.swift */; };
+		B02CB16D213956CE005CAFBB /* SettingsCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16C213956CE005CAFBB /* SettingsCellType.swift */; };
+		B02CB16F21395FAD005CAFBB /* SettingsModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16E21395FAD005CAFBB /* SettingsModelDelegate.swift */; };
 		B077ED18212881890001CBAA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
 		B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B968492124A5910002410B /* AppDelegate.swift */; };
 		B0B9684C2124A5910002410B /* RandomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9684B2124A5910002410B /* RandomizeViewController.swift */; };
@@ -39,7 +47,6 @@
 		B0BFDD3D2138286C00656396 /* RandomizeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */; };
 		B0BFDD3F21382A0500656396 /* RootNavigatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */; };
 		B0ED0D972127387C00313603 /* PersonListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D962127387C00313603 /* PersonListTableViewController.swift */; };
-		B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */; };
 		B0ED0D9B2128171900313603 /* GroupsListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +68,14 @@
 		B02CB1512139364D005CAFBB /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
 		B02CB15321393659005CAFBB /* SettingsSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionModel.swift; sourceTree = "<group>"; };
 		B02CB156213941FF005CAFBB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		B02CB159213943A4005CAFBB /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		B02CB1622139455C005CAFBB /* SettingsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewControllerDelegate.swift; sourceTree = "<group>"; };
+		B02CB164213946F0005CAFBB /* SKIAPItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKIAPItem.swift; sourceTree = "<group>"; };
+		B02CB16621394777005CAFBB /* SKIAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKIAPHelper.swift; sourceTree = "<group>"; };
+		B02CB168213950C7005CAFBB /* SKStoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStoreDelegate.swift; sourceTree = "<group>"; };
+		B02CB16A213951E6005CAFBB /* SKRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKRating.swift; sourceTree = "<group>"; };
+		B02CB16C213956CE005CAFBB /* SettingsCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellType.swift; sourceTree = "<group>"; };
+		B02CB16E21395FAD005CAFBB /* SettingsModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelDelegate.swift; sourceTree = "<group>"; };
 		B077ED17212881890001CBAA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B0B968462124A5910002410B /* GroupRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B968492124A5910002410B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -84,7 +99,6 @@
 		B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizeViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigatorDelegate.swift; sourceTree = "<group>"; };
 		B0ED0D962127387C00313603 /* PersonListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewController.swift; sourceTree = "<group>"; };
-		B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListTableViewCell.swift; sourceTree = "<group>"; };
 		B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListTableViewController.swift; sourceTree = "<group>"; };
 		B0ED0D9C2128285700313603 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -94,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B02CB15A213943A4005CAFBB /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -122,17 +137,83 @@
 				B02CB14D21393292005CAFBB /* SettingsModel.swift */,
 				B02CB14F213932CF005CAFBB /* SettingsAction.swift */,
 				B02CB1512139364D005CAFBB /* SettingsCellModel.swift */,
+				B02CB16C213956CE005CAFBB /* SettingsCellType.swift */,
 				B02CB15321393659005CAFBB /* SettingsSectionModel.swift */,
+				B02CB16E21395FAD005CAFBB /* SettingsModelDelegate.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
 		};
-		B02CB155213941E7005CAFBB /* Extensions */ = {
+		B02CB158213943A4005CAFBB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B02CB159213943A4005CAFBB /* StoreKit.framework */,
 			);
-			name = Extensions;
-			path = "New Group";
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B02CB15B213943CB005CAFBB /* StoreKit */ = {
+			isa = PBXGroup;
+			children = (
+				B02CB164213946F0005CAFBB /* SKIAPItem.swift */,
+				B02CB16621394777005CAFBB /* SKIAPHelper.swift */,
+				B02CB168213950C7005CAFBB /* SKStoreDelegate.swift */,
+				B02CB16A213951E6005CAFBB /* SKRating.swift */,
+			);
+			path = StoreKit;
+			sourceTree = "<group>";
+		};
+		B02CB15C213944D8005CAFBB /* RootNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				B0BFDD2F2137EDD000656396 /* RootNavigator.swift */,
+				B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */,
+			);
+			path = RootNavigator;
+			sourceTree = "<group>";
+		};
+		B02CB15D213944E3005CAFBB /* PeopleNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				B0BFDD3A2138249900656396 /* PeopleNavigator.swift */,
+			);
+			path = PeopleNavigator;
+			sourceTree = "<group>";
+		};
+		B02CB15E213944EF005CAFBB /* GroupsNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				B0BFDD312137F7F800656396 /* GroupsNavigator.swift */,
+			);
+			path = GroupsNavigator;
+			sourceTree = "<group>";
+		};
+		B02CB15F213944F6005CAFBB /* SettingsNavigator */ = {
+			isa = PBXGroup;
+			children = (
+				B02CB1492139309B005CAFBB /* SettingsNavigator.swift */,
+			);
+			path = SettingsNavigator;
+			sourceTree = "<group>";
+		};
+		B02CB16021394521005CAFBB /* Randomizer */ = {
+			isa = PBXGroup;
+			children = (
+				B0B9684B2124A5910002410B /* RandomizeViewController.swift */,
+				B0ED0D962127387C00313603 /* PersonListTableViewController.swift */,
+				B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */,
+				B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */,
+			);
+			path = Randomizer;
+			sourceTree = "<group>";
+		};
+		B02CB1612139453F005CAFBB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B02CB1472139300E005CAFBB /* SettingsViewController.swift */,
+				B02CB1622139455C005CAFBB /* SettingsViewControllerDelegate.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		B077ED19212881900001CBAA /* Storage */ = {
@@ -150,6 +231,7 @@
 				B0B968482124A5910002410B /* GroupRandomizer */,
 				B0B9685D2124A5930002410B /* GroupRandomizerTests */,
 				B0B968472124A5910002410B /* Products */,
+				B02CB158213943A4005CAFBB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -165,14 +247,14 @@
 		B0B968482124A5910002410B /* GroupRandomizer */ = {
 			isa = PBXGroup;
 			children = (
-				B02CB155213941E7005CAFBB /* Extensions */,
+				B02CB15B213943CB005CAFBB /* StoreKit */,
 				B02CB14B21393274005CAFBB /* Model */,
 				B0BFDD2C2137ED2900656396 /* Navigation */,
-				B0B968552124A5930002410B /* Info.plist */,
 				B0B968762124B6B90002410B /* Base */,
 				B0B968702124ACE70002410B /* Extensions */,
 				B077ED19212881900001CBAA /* Storage */,
 				B0B968782124B6DD0002410B /* ViewController */,
+				B0B968552124A5930002410B /* Info.plist */,
 			);
 			path = GroupRandomizer;
 			sourceTree = "<group>";
@@ -220,12 +302,8 @@
 		B0B968782124B6DD0002410B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B0B9684B2124A5910002410B /* RandomizeViewController.swift */,
-				B0ED0D962127387C00313603 /* PersonListTableViewController.swift */,
-				B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */,
-				B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */,
-				B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */,
-				B02CB1472139300E005CAFBB /* SettingsViewController.swift */,
+				B02CB1612139453F005CAFBB /* Settings */,
+				B02CB16021394521005CAFBB /* Randomizer */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -234,11 +312,10 @@
 			isa = PBXGroup;
 			children = (
 				B0BFDD2D2137ED3F00656396 /* Navigator.swift */,
-				B0BFDD2F2137EDD000656396 /* RootNavigator.swift */,
-				B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */,
-				B0BFDD312137F7F800656396 /* GroupsNavigator.swift */,
-				B0BFDD3A2138249900656396 /* PeopleNavigator.swift */,
-				B02CB1492139309B005CAFBB /* SettingsNavigator.swift */,
+				B02CB15F213944F6005CAFBB /* SettingsNavigator */,
+				B02CB15E213944EF005CAFBB /* GroupsNavigator */,
+				B02CB15D213944E3005CAFBB /* PeopleNavigator */,
+				B02CB15C213944D8005CAFBB /* RootNavigator */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -293,6 +370,11 @@
 				TargetAttributes = {
 					B0B968452124A5910002410B = {
 						CreatedOnToolsVersion = 10.0;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+						};
 					};
 					B0B968592124A5930002410B = {
 						CreatedOnToolsVersion = 10.0;
@@ -349,9 +431,12 @@
 				B0BFDD3F21382A0500656396 /* RootNavigatorDelegate.swift in Sources */,
 				B0BFDD302137EDD000656396 /* RootNavigator.swift in Sources */,
 				B02CB15421393659005CAFBB /* SettingsSectionModel.swift in Sources */,
+				B02CB169213950C7005CAFBB /* SKStoreDelegate.swift in Sources */,
 				B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */,
+				B02CB1632139455C005CAFBB /* SettingsViewControllerDelegate.swift in Sources */,
 				B02CB1482139300E005CAFBB /* SettingsViewController.swift in Sources */,
 				B0BFDD322137F7F800656396 /* GroupsNavigator.swift in Sources */,
+				B02CB16721394777005CAFBB /* SKIAPHelper.swift in Sources */,
 				B0ED0D9B2128171900313603 /* GroupsListTableViewController.swift in Sources */,
 				B0B968722124ACFB0002410B /* Array+Extensions.swift in Sources */,
 				B0B9686F2124A7BB0002410B /* Randomizer.swift in Sources */,
@@ -360,13 +445,16 @@
 				B02CB14E21393292005CAFBB /* SettingsModel.swift in Sources */,
 				B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */,
 				B02CB1522139364D005CAFBB /* SettingsCellModel.swift in Sources */,
+				B02CB16F21395FAD005CAFBB /* SettingsModelDelegate.swift in Sources */,
 				B02CB150213932CF005CAFBB /* SettingsAction.swift in Sources */,
+				B02CB165213946F0005CAFBB /* SKIAPItem.swift in Sources */,
 				B0B9686D2124A6010002410B /* Person.swift in Sources */,
+				B02CB16B213951E6005CAFBB /* SKRating.swift in Sources */,
 				B02CB14A2139309B005CAFBB /* SettingsNavigator.swift in Sources */,
 				B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */,
 				B0BFDD3D2138286C00656396 /* RandomizeViewControllerDelegate.swift in Sources */,
-				B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */,
 				B0ED0D972127387C00313603 /* PersonListTableViewController.swift in Sources */,
+				B02CB16D213956CE005CAFBB /* SettingsCellType.swift in Sources */,
 				B077ED18212881890001CBAA /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

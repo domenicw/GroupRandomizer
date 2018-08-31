@@ -23,3 +23,22 @@ public enum SettingsAction {
         }
     }
 }
+
+extension SettingsAction: Equatable {
+    
+    static public func ==(first: SettingsAction, second: SettingsAction) -> Bool {
+        switch (first, second) {
+        case (.none, .none):
+            return true
+        case (.tipJar, .tipJar):
+            return true
+        default:
+            return false
+        }
+    }
+    
+    static public func != (first: SettingsAction, second: SettingsAction) -> Bool {
+        return !(first == second)
+    }
+    
+}

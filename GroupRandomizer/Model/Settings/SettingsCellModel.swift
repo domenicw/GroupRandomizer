@@ -12,15 +12,21 @@ public class SettingsCellModel {
     
     // MARK: - Variables
     
-    public var text: String?
+    public var text: String
+    
+    public var detailText: String?
     
     public var action: SettingsAction
     
+    public var cellType: SettingsCellType
+    
     // MARK: - Initializers
     
-    public init(text: String?, action: SettingsAction) {
+    public init(text: String, detailText: String? = nil, action: SettingsAction, cellType: SettingsCellType = .normal) {
         self.text = text
+        self.detailText = detailText
         self.action = action
+        self.cellType = cellType
     }
     
 }

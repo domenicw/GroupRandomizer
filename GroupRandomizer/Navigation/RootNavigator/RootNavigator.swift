@@ -19,6 +19,8 @@ public class RootNavigator {
     
     public var childCoordinators: [Navigator]
     
+    private var skRating = SKRating()
+    
     // MARK: - Initializers
     
     public init(window: UIWindow, model: RandomizerModel) {
@@ -36,6 +38,7 @@ public class RootNavigator {
         let navControllers = self.childCoordinators.map({$0.navigationController})
         self.tabBarController.viewControllers = navControllers
         self.tabBarController.selectedIndex = 0
+        self.tabBarController.tabBar.tintColor = UIColor(named: "lightBlue")
     }
     
     // MARK: - Child Creation
@@ -67,6 +70,7 @@ extension RootNavigator: RootNavigatorDelegate {
     public func randomize() {
         Randomizer.randomize(model: self.model)
         self.tabBarController.selectedIndex = 0
+        self.skRating.rate()
     }
     
 }

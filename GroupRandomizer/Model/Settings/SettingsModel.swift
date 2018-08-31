@@ -8,19 +8,39 @@
 
 import Foundation
 import UIKit
+import StoreKit
 
 public class SettingsModel {
     
     // MARK: - Variables
     
-    var sectionModels: [SettingsSectionModel]
+    public var delegate: SettingsModelDelegate?
+    
+    public private(set) var sectionModels: [SettingsSectionModel] {
+        didSet {
+            delegate?.modelDidChange()
+        }
+    }
     
     // MARK: - Initializers
     
     public init(sectionModels: [SettingsSectionModel]) {
         self.sectionModels = sectionModels
     }
-
+    
+    // MARK: - In App Purchase Loaded
+    
+    public func add(products: [SKProduct]) {
+        let cellModels = products.map { (product) -> SettingsCellModel in
+            let tipJarCell = SettingsCellModel(text: product.localizedTitle, detailText: String(describing:  product.priceLocale), action: .tipJar, cellType: .tipJar)
+            return tipJarCell
+        }
+        
+        let tipJarSection = SettingsSectionModel(headerText: "Tip Jar", footerText: "Thank you for supporting my work 😊", cellModels: cellModels)
+        
+        self.sectionModels.insert(tipJarSection, at: 1)
+    }
+    
 }
 
 extension SettingsModel {
@@ -28,10 +48,6 @@ extension SettingsModel {
     public static func create() -> SettingsModel {
         let infoCell = SettingsCellModel(text: "Randomizer takes the hard part out of making game groups. Quickly add people and assign them randomly to your desired number of groups.", action: .none)
         let infoSection = SettingsSectionModel(headerText: "Info", footerText: nil, cellModels: [infoCell])
-        
-        let tipJarCell = SettingsCellModel(text: "Generous Tip", action: .tipJar)
-        let tipJarSection = SettingsSectionModel(headerText: "Tip Jar", footerText: "Thank you for supporting my work 😊", cellModels: [tipJarCell])
-        
         
         var disclosureFooterText: String
         if let release = Bundle.main.releaseVersionNumber, let build = Bundle.main.buildVersionNumber {
@@ -41,7 +57,7 @@ extension SettingsModel {
         }
         let disclosureSection: SettingsSectionModel = SettingsSectionModel(headerText: nil, footerText: disclosureFooterText, cellModels: [], footerTextAlignment: .center)
         
-        let model = SettingsModel(sectionModels: [infoSection, tipJarSection, disclosureSection])
+        let model = SettingsModel(sectionModels: [infoSection, disclosureSection])
         
         return model
     }
