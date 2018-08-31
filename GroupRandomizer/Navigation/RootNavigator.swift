@@ -31,6 +31,7 @@ public class RootNavigator {
         
         self.createGroupsList()
         self.createPeopleList()
+        self.createSettings()
         
         let navControllers = self.childCoordinators.map({$0.navigationController})
         self.tabBarController.viewControllers = navControllers
@@ -51,6 +52,12 @@ public class RootNavigator {
         peopleNavigator.delegate = self
         peopleNavigator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         self.childCoordinators.append(peopleNavigator)
+    }
+    
+    func createSettings() {
+        let settingsNavigator = SettingsNavigator()
+        settingsNavigator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 2)
+        self.childCoordinators.append(settingsNavigator)
     }
     
 }

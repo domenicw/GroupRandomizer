@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B02CB1482139300E005CAFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1472139300E005CAFBB /* SettingsViewController.swift */; };
+		B02CB14A2139309B005CAFBB /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1492139309B005CAFBB /* SettingsNavigator.swift */; };
+		B02CB14E21393292005CAFBB /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB14D21393292005CAFBB /* SettingsModel.swift */; };
+		B02CB150213932CF005CAFBB /* SettingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB14F213932CF005CAFBB /* SettingsAction.swift */; };
+		B02CB1522139364D005CAFBB /* SettingsCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1512139364D005CAFBB /* SettingsCellModel.swift */; };
+		B02CB15421393659005CAFBB /* SettingsSectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB15321393659005CAFBB /* SettingsSectionModel.swift */; };
+		B02CB157213941FF005CAFBB /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB156213941FF005CAFBB /* Bundle+Extension.swift */; };
 		B077ED18212881890001CBAA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
 		B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B968492124A5910002410B /* AppDelegate.swift */; };
 		B0B9684C2124A5910002410B /* RandomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9684B2124A5910002410B /* RandomizeViewController.swift */; };
@@ -47,6 +54,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B02CB1472139300E005CAFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B02CB1492139309B005CAFBB /* SettingsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigator.swift; sourceTree = "<group>"; };
+		B02CB14D21393292005CAFBB /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
+		B02CB14F213932CF005CAFBB /* SettingsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsAction.swift; sourceTree = "<group>"; };
+		B02CB1512139364D005CAFBB /* SettingsCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellModel.swift; sourceTree = "<group>"; };
+		B02CB15321393659005CAFBB /* SettingsSectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsSectionModel.swift; sourceTree = "<group>"; };
+		B02CB156213941FF005CAFBB /* Bundle+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
 		B077ED17212881890001CBAA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B0B968462124A5910002410B /* GroupRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B968492124A5910002410B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +107,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B02CB14B21393274005CAFBB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B02CB14C21393285005CAFBB /* Settings */,
+				B0B968692124A5A40002410B /* Randomizer */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B02CB14C21393285005CAFBB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B02CB14D21393292005CAFBB /* SettingsModel.swift */,
+				B02CB14F213932CF005CAFBB /* SettingsAction.swift */,
+				B02CB1512139364D005CAFBB /* SettingsCellModel.swift */,
+				B02CB15321393659005CAFBB /* SettingsSectionModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B02CB155213941E7005CAFBB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Extensions;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		B077ED19212881900001CBAA /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -123,12 +165,13 @@
 		B0B968482124A5910002410B /* GroupRandomizer */ = {
 			isa = PBXGroup;
 			children = (
+				B02CB155213941E7005CAFBB /* Extensions */,
+				B02CB14B21393274005CAFBB /* Model */,
 				B0BFDD2C2137ED2900656396 /* Navigation */,
 				B0B968552124A5930002410B /* Info.plist */,
 				B0B968762124B6B90002410B /* Base */,
 				B0B968702124ACE70002410B /* Extensions */,
 				B077ED19212881900001CBAA /* Storage */,
-				B0B968692124A5A40002410B /* Randomizer */,
 				B0B968782124B6DD0002410B /* ViewController */,
 			);
 			path = GroupRandomizer;
@@ -159,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				B0B968712124ACFB0002410B /* Array+Extensions.swift */,
+				B02CB156213941FF005CAFBB /* Bundle+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -181,6 +225,7 @@
 				B0ED0D9821273AE200313603 /* PersonListTableViewCell.swift */,
 				B0ED0D9A2128171900313603 /* GroupsListTableViewController.swift */,
 				B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */,
+				B02CB1472139300E005CAFBB /* SettingsViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -193,6 +238,7 @@
 				B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */,
 				B0BFDD312137F7F800656396 /* GroupsNavigator.swift */,
 				B0BFDD3A2138249900656396 /* PeopleNavigator.swift */,
+				B02CB1492139309B005CAFBB /* SettingsNavigator.swift */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -298,18 +344,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0BFDD3B2138249900656396 /* PeopleNavigator.swift in Sources */,
+				B02CB157213941FF005CAFBB /* Bundle+Extension.swift in Sources */,
 				B0B9686B2124A5BB0002410B /* Group.swift in Sources */,
 				B0BFDD3F21382A0500656396 /* RootNavigatorDelegate.swift in Sources */,
 				B0BFDD302137EDD000656396 /* RootNavigator.swift in Sources */,
+				B02CB15421393659005CAFBB /* SettingsSectionModel.swift in Sources */,
 				B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */,
+				B02CB1482139300E005CAFBB /* SettingsViewController.swift in Sources */,
 				B0BFDD322137F7F800656396 /* GroupsNavigator.swift in Sources */,
 				B0ED0D9B2128171900313603 /* GroupsListTableViewController.swift in Sources */,
 				B0B968722124ACFB0002410B /* Array+Extensions.swift in Sources */,
 				B0B9686F2124A7BB0002410B /* Randomizer.swift in Sources */,
 				B0B9684C2124A5910002410B /* RandomizeViewController.swift in Sources */,
 				B0BFDD2E2137ED3F00656396 /* Navigator.swift in Sources */,
+				B02CB14E21393292005CAFBB /* SettingsModel.swift in Sources */,
 				B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */,
+				B02CB1522139364D005CAFBB /* SettingsCellModel.swift in Sources */,
+				B02CB150213932CF005CAFBB /* SettingsAction.swift in Sources */,
 				B0B9686D2124A6010002410B /* Person.swift in Sources */,
+				B02CB14A2139309B005CAFBB /* SettingsNavigator.swift in Sources */,
 				B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */,
 				B0BFDD3D2138286C00656396 /* RandomizeViewControllerDelegate.swift in Sources */,
 				B0ED0D9921273AE200313603 /* PersonListTableViewCell.swift in Sources */,
