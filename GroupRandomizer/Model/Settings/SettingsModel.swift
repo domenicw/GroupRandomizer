@@ -47,7 +47,7 @@ extension SettingsModel {
     
     public static func create() -> SettingsModel {
         let infoCell = SettingsCellModel(text: "Randomizer takes the hard part out of making game groups. Quickly add people and assign them randomly to your desired number of groups.", action: .none)
-        let infoSection = SettingsSectionModel(headerText: "Info", footerText: nil, cellModels: [infoCell])
+        let infoSection = SettingsSectionModel(headerText: "Information", footerText: nil, cellModels: [infoCell])
         
         var disclosureFooterText: String
         if let release = Bundle.main.releaseVersionNumber, let build = Bundle.main.buildVersionNumber {

@@ -46,20 +46,20 @@ public class RootNavigator {
     func createGroupsList() {
         let groupsNavigator = GroupsNavigator(model: self.model)
         groupsNavigator.delegate = self
-        groupsNavigator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .contacts, tag: 0)
+        groupsNavigator.navigationController.tabBarItem = UITabBarItem(title: "Groups", image: UIImage(named: "group"), tag: 0)
         self.childCoordinators.append(groupsNavigator)
     }
     
     func createPeopleList() {
         let peopleNavigator = PeopleNavigator(model: self.model)
         peopleNavigator.delegate = self
-        peopleNavigator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
+        peopleNavigator.navigationController.tabBarItem = UITabBarItem(title: "People", image: UIImage(named: "people"), tag: 1)
         self.childCoordinators.append(peopleNavigator)
     }
     
     func createSettings() {
         let settingsNavigator = SettingsNavigator()
-        settingsNavigator.navigationController.tabBarItem = UITabBarItem(tabBarSystemItem: .search, tag: 2)
+        settingsNavigator.navigationController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 2)
         self.childCoordinators.append(settingsNavigator)
     }
     
