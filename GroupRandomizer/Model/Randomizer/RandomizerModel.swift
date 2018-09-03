@@ -50,6 +50,12 @@ public class RandomizerModel {
     
     // MARK: - Persistant Storage
     
+    /// Checks if people is empty
+    ///- Returns: True is people is empty
+    public func peopleIsEmpty() -> Bool {
+        return self.people.isEmpty
+    }
+    
     /// Saves names of people and numberOfGroups to UserDefaults
     public func save() {
         let names = self.people.map({$0.name})
@@ -59,10 +65,13 @@ public class RandomizerModel {
     
     /// Retrieves names of people and numberOfGroups from UserDefaults
     public func retrieve() {
-        let people = Storage.retrieveNames()
-        self.people = people.map({Person(name: $0)})
+        let names = Storage.retrieveNames()
+        self.people = names.map({Person(name: $0)})
         self.numberOfGroups = Storage.retrieveNumberOfGroups()
-        Randomizer.randomize(model: self)
+        
+        if !self.peopleIsEmpty() {
+            Randomizer.randomize(model: self)
+        }
     }
     
     // MARK: - Delegation

@@ -21,6 +21,15 @@ public class RootNavigator {
     
     private var skRating = SKRating()
     
+    // MARK: - Types
+    
+    /// Tabs of tabBarController
+    private enum Tabs: Int {
+        case groups
+        case people
+        case settings
+    }
+    
     // MARK: - Initializers
     
     public init(window: UIWindow, model: RandomizerModel) {
@@ -31,45 +40,62 @@ public class RootNavigator {
         
         window.rootViewController = self.tabBarController
         
+        self.setUpTabs()
+    }
+    
+    // MARK: - Tab Bar Setup
+    
+    /// Sets up all tabs for tab bar controller
+    private func setUpTabs() {
         self.createGroupsList()
         self.createPeopleList()
         self.createSettings()
         
         let navControllers = self.childCoordinators.map({$0.navigationController})
         self.tabBarController.viewControllers = navControllers
-        self.tabBarController.selectedIndex = 0
         self.tabBarController.tabBar.tintColor = UIColor(named: "lightBlue")
+        
+        if self.model.peopleIsEmpty() {
+            self.tabBarController.selectedIndex = Tabs.people.rawValue
+        } else {
+            self.tabBarController.selectedIndex = Tabs.groups.rawValue
+        }
     }
     
     // MARK: - Child Creation
     
+    /// Creates groups list navigator
     func createGroupsList() {
         let groupsNavigator = GroupsNavigator(model: self.model)
         groupsNavigator.delegate = self
-        groupsNavigator.navigationController.tabBarItem = UITabBarItem(title: "Groups", image: UIImage(named: "group"), tag: 0)
+        groupsNavigator.navigationController.tabBarItem = UITabBarItem(title: "Groups", image: UIImage(named: "group"), tag: Tabs.groups.rawValue)
         self.childCoordinators.append(groupsNavigator)
     }
     
+    /// Creates people list navigator
     func createPeopleList() {
         let peopleNavigator = PeopleNavigator(model: self.model)
         peopleNavigator.delegate = self
-        peopleNavigator.navigationController.tabBarItem = UITabBarItem(title: "People", image: UIImage(named: "people"), tag: 1)
+        peopleNavigator.navigationController.tabBarItem = UITabBarItem(title: "People", image: UIImage(named: "people"), tag: Tabs.people.rawValue)
         self.childCoordinators.append(peopleNavigator)
     }
     
+    /// Creates settings navigator
     func createSettings() {
         let settingsNavigator = SettingsNavigator()
-        settingsNavigator.navigationController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: 2)
+        settingsNavigator.navigationController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: Tabs.settings.rawValue)
         self.childCoordinators.append(settingsNavigator)
     }
     
 }
 
+// MARK: - RootNavigatorDelegate extension
+
 extension RootNavigator: RootNavigatorDelegate {
     
     public func randomize() {
         Randomizer.randomize(model: self.model)
-        self.tabBarController.selectedIndex = 0
+        self.tabBarController.selectedIndex = Tabs.groups.rawValue
         self.skRating.rate()
     }
     
