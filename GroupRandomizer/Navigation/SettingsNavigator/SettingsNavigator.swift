@@ -28,6 +28,7 @@ public class SettingsNavigator: Navigator {
         
         self.model = SettingsModel.create()
         self.storeHelper = SKIAPHelper()
+        self.storeHelper.delegate = self
         self.storeHelper.fetchAvailableProducts()
         
         let settingsViewController = SettingsViewController(model: self.model)
@@ -55,8 +56,5 @@ extension SettingsNavigator: SKStoreDelegate {
         let alert = UIAlertController(title: "Thank you 😊", message: "Thank you so much for your tip. I am very grateful.", preferredStyle: .alert)
         self.navigationController.present(alert, animated: true, completion: nil)
     }
-    
-    
-    
     
 }

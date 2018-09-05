@@ -32,8 +32,9 @@ public class SettingsModel {
     
     public func add(products: [SKProduct]) {
         let cellModels = products.map { (product) -> SettingsCellModel in
-            let tipJarCell = SettingsCellModel(text: product.localizedTitle, detailText: String(describing:  product.priceLocale), action: .tipJar, cellType: .tipJar)
-            return tipJarCell
+            print(String(describing: product.priceLocale))
+            let tipJarCell = SettingsCellModel(text: product.localizedTitle, detailText: product.localizedPrice, action: .tipJar, cellType: .tipJar)
+ /Users/domenic/Desktop/GroupRandomizer/GroupRandomizer/Model/Settings/SettingsModel.swift           return tipJarCell
         }
         
         let tipJarSection = SettingsSectionModel(headerText: "Tip Jar", footerText: "Thank you for supporting my work 😊", cellModels: cellModels)

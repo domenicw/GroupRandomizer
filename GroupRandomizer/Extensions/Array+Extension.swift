@@ -1,5 +1,5 @@
 //
-//  Array+Extensions.swift
+//  Array+Extension.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 15.08.18.
