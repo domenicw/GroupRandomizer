@@ -73,8 +73,11 @@ extension SKIAPHelper: SKProductsRequestDelegate, SKPaymentTransactionObserver {
             switch transaction.transactionState {
             case .purchased:
                 self.delegate?.purchaseWasSuccessful()
+                queue.finishTransaction(transaction)
             case .failed:
-                SKPaymentQueue.default().finishTransaction(transaction)
+                queue.finishTransaction(transaction)
+            case .restored:
+                queue.finishTransaction(transaction)
             default:
                 break
             }
