@@ -34,7 +34,7 @@ public class SettingsModel {
         let cellModels = products.map { (product) -> SettingsCellModel in
             print(String(describing: product.priceLocale))
             let tipJarCell = SettingsCellModel(text: product.localizedTitle, detailText: product.localizedPrice, action: .tipJar, cellType: .tipJar)
- /Users/domenic/Desktop/GroupRandomizer/GroupRandomizer/Model/Settings/SettingsModel.swift           return tipJarCell
+            return tipJarCell
         }
         
         let tipJarSection = SettingsSectionModel(headerText: "Tip Jar", footerText: "Thank you for supporting my work 😊", cellModels: cellModels)

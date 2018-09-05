@@ -54,6 +54,8 @@ extension SettingsNavigator: SKStoreDelegate {
     
     func purchaseWasSuccessful() {
         let alert = UIAlertController(title: "Thank you 😊", message: "Thank you so much for your tip. I am very grateful.", preferredStyle: .alert)
+        let dismiss = UIAlertAction(title: "Dismiss", style: .default, handler: nil)
+        alert.addAction(dismiss)
         self.navigationController.present(alert, animated: true, completion: nil)
     }
     
