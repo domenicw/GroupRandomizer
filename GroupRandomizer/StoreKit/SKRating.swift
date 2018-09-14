@@ -25,7 +25,9 @@ public class SKRating {
     
     /// Request a review (presents review controller)
     private func requestReview() {
-        SKStoreReviewController.requestReview()
+        DispatchQueue.main.async {
+            SKStoreReviewController.requestReview()
+        }
     }
     
 }
