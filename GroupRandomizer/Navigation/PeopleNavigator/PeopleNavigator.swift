@@ -22,19 +22,75 @@ public class PeopleNavigator: Navigator {
     // MARK: - Initializers
     
     public init(model: RandomizerModel) {
-        let nav = UINavigationController()
-        self.navigationController = nav
-        
+        let peopleController = PersonListViewController(model: model.people)
+        self.navigationController = UINavigationController(rootViewController: peopleController)
         self.model = model
+        self.model.add(delegate: self)
         
-        let randomizeController = RandomizeViewController(model: model, activeChild: .person)
-        randomizeController.delegate = self
-        self.navigationController.pushViewController(randomizeController, animated: false)
+        peopleController.delegate = self
     }
     
 }
 
-extension PeopleNavigator: RandomizeViewControllerDelegate {
+extension PeopleNavigator: RandomizerModelDelegate {
+    
+    public func groupsDidChange() {}
+    
+    public func peopleDidChange() {
+        if let viewController = self.navigationController.topViewController as? PersonListViewController {
+            viewController.model = self.model.people
+        }
+    }
+    
+}
+
+extension PeopleNavigator: PersonListViewControllerDelegate {
+    
+    public func addPerson() {
+        let alert = UIAlertController(title: "Add Person", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Name of person"
+        }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+            if let name = alert.textFields?[0].text {
+                let person = Person(name: name)
+                self.model.people.append(person)
+            }
+        }
+        alert.addAction(saveAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        self.navigationController.present(alert, animated: true, completion: nil)
+    }
+    
+    public func editNameOfPerson(_ index: Int) {
+        let alert = UIAlertController(title: "Change Name", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Name of person"
+            textField.text = self.model.people[index].name
+        }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+            if let name = alert.textFields?[0].text {
+                self.model.people[index].name = name
+            }
+        }
+        alert.addAction(saveAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        DispatchQueue.main.async {
+            self.navigationController.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    public func removePerson(_ index: Int) {
+        self.model.people.remove(at: index)
+    }
     
     public func randomize() {
         self.delegate?.randomize()

@@ -22,20 +22,52 @@ public class GroupsNavigator: Navigator {
     // MARK: - Initializers
     
     public init(model: RandomizerModel) {
-        let nav = UINavigationController()
-        self.navigationController = nav
-        
+        let groupsController = GroupsListViewController(model: model.groups)
+        self.navigationController = UINavigationController(rootViewController: groupsController)
         self.model = model
+        self.model.add(delegate: self)
         
-        let randomizeController = RandomizeViewController(model: model, activeChild: .group)
-        randomizeController.delegate = self
-        self.navigationController.pushViewController(randomizeController, animated: false)
+        groupsController.delegate = self
     }
 }
 
-extension GroupsNavigator: RandomizeViewControllerDelegate {
+extension GroupsNavigator: RandomizerModelDelegate {
+    
+    public func groupsDidChange() {
+        if let viewController = self.navigationController.topViewController as? GroupsListViewController {
+            viewController.model = self.model.groups
+        }
+    }
+    
+    public func peopleDidChange() {}
+    
+}
+
+extension GroupsNavigator: GroupsListViewControllerDelegate {
     
     public func randomize() {
         self.delegate?.randomize()
     }
+    
+    public func changeNumberOfGroups() {
+        let alert = UIAlertController(title: "Number of Groups", message: nil, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.text = "\(self.model.numberOfGroups)"
+            textField.keyboardType = UIKeyboardType.decimalPad
+        }
+        
+        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+            if let numberOfGroups = alert.textFields?[0].text {
+                self.model.numberOfGroups = Int(numberOfGroups) ?? 2
+                self.randomize()
+            }
+        }
+        alert.addAction(saveAction)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(cancelAction)
+        
+        self.navigationController.present(alert, animated: true, completion: nil)
+    }
+    
 }
