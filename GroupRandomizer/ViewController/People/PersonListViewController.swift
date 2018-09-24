@@ -34,7 +34,7 @@ public class PersonListViewController: RandomizeViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.title = "People"
+        self.title = PeopleText.viewTitle.localized
         
     }
     

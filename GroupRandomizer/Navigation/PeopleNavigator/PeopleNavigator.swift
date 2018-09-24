@@ -47,12 +47,12 @@ extension PeopleNavigator: RandomizerModelDelegate {
 extension PeopleNavigator: PersonListViewControllerDelegate {
     
     public func addPerson() {
-        let alert = UIAlertController(title: "Add Person", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: AlertText.addPersonNameTitle.localized, message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = "Name of person"
+            textField.placeholder = AlertText.addPersonNamePlaceholder.localized
         }
         
-        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+        let saveAction = UIAlertAction(title: AlertText.genericSaveTitle.localized, style: .default) { (action) in
             if let name = alert.textFields?[0].text {
                 let person = Person(name: name)
                 self.model.people.append(person)
@@ -60,27 +60,27 @@ extension PeopleNavigator: PersonListViewControllerDelegate {
         }
         alert.addAction(saveAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: AlertText.genericCancelTitle.localized, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         
         self.navigationController.present(alert, animated: true, completion: nil)
     }
     
     public func editNameOfPerson(_ index: Int) {
-        let alert = UIAlertController(title: "Change Name", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: AlertText.editPersonNameTitle.localized, message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = "Name of person"
+            textField.placeholder = AlertText.addPersonNamePlaceholder.localized
             textField.text = self.model.people[index].name
         }
         
-        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+        let saveAction = UIAlertAction(title: AlertText.genericSaveTitle.localized, style: .default) { (action) in
             if let name = alert.textFields?[0].text {
                 self.model.people[index].name = name
             }
         }
         alert.addAction(saveAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: AlertText.genericCancelTitle.localized, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         
         DispatchQueue.main.async {

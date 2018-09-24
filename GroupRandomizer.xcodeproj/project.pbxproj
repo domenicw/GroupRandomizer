@@ -22,6 +22,19 @@
 		B02CB16B213951E6005CAFBB /* SKRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16A213951E6005CAFBB /* SKRating.swift */; };
 		B02CB16D213956CE005CAFBB /* SettingsCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16C213956CE005CAFBB /* SettingsCellType.swift */; };
 		B02CB16F21395FAD005CAFBB /* SettingsModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16E21395FAD005CAFBB /* SettingsModelDelegate.swift */; };
+		B0325282215935ED0069F350 /* PeopleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0325281215935ED0069F350 /* PeopleText.swift */; };
+		B0325284215936370069F350 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0325283215936370069F350 /* Localizable.swift */; };
+		B03252872159392F0069F350 /* RandomizeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03252862159392F0069F350 /* RandomizeText.swift */; };
+		B0325288215939940069F350 /* Randomize.strings in Resources */ = {isa = PBXBuildFile; fileRef = B032528A215939940069F350 /* Randomize.strings */; };
+		B032528C21593B5B0069F350 /* People.strings in Resources */ = {isa = PBXBuildFile; fileRef = B032528E21593B5B0069F350 /* People.strings */; };
+		B032529321593BC00069F350 /* GroupsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B032529221593BC00069F350 /* GroupsText.swift */; };
+		B032529421593C190069F350 /* Groups.strings in Resources */ = {isa = PBXBuildFile; fileRef = B032529621593C190069F350 /* Groups.strings */; };
+		B032529921593C470069F350 /* SettingsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B032529821593C470069F350 /* SettingsText.swift */; };
+		B032529A21593CAF0069F350 /* Settings.strings in Resources */ = {isa = PBXBuildFile; fileRef = B032529C21593CAF0069F350 /* Settings.strings */; };
+		B03252A021593EF30069F350 /* RootText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B032529F21593EF30069F350 /* RootText.swift */; };
+		B03252A32159403E0069F350 /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = B03252A52159403E0069F350 /* Root.strings */; };
+		B03252AB215941C00069F350 /* AlertText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03252AA215941C00069F350 /* AlertText.swift */; };
+		B03252AC2159431D0069F350 /* Alert.strings in Resources */ = {isa = PBXBuildFile; fileRef = B03252AE2159431D0069F350 /* Alert.strings */; };
 		B077ED18212881890001CBAA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
 		B0A2F352215661E3002C340F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2F351215661E3002C340F /* UIColor+Extension.swift */; };
 		B0A2F35621566C9A002C340F /* PersonListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2F35521566C9A002C340F /* PersonListViewControllerDelegate.swift */; };
@@ -80,6 +93,29 @@
 		B02CB16A213951E6005CAFBB /* SKRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKRating.swift; sourceTree = "<group>"; };
 		B02CB16C213956CE005CAFBB /* SettingsCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellType.swift; sourceTree = "<group>"; };
 		B02CB16E21395FAD005CAFBB /* SettingsModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelDelegate.swift; sourceTree = "<group>"; };
+		B0325278215932500069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B0325281215935ED0069F350 /* PeopleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleText.swift; sourceTree = "<group>"; };
+		B0325283215936370069F350 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		B03252862159392F0069F350 /* RandomizeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizeText.swift; sourceTree = "<group>"; };
+		B0325289215939940069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Randomize.strings; sourceTree = "<group>"; };
+		B032528B2159399C0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Randomize.strings; sourceTree = "<group>"; };
+		B032528D21593B5B0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/People.strings; sourceTree = "<group>"; };
+		B032528F21593B5D0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/People.strings; sourceTree = "<group>"; };
+		B032529221593BC00069F350 /* GroupsText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsText.swift; sourceTree = "<group>"; };
+		B032529521593C190069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Groups.strings; sourceTree = "<group>"; };
+		B032529721593C1A0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Groups.strings; sourceTree = "<group>"; };
+		B032529821593C470069F350 /* SettingsText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsText.swift; sourceTree = "<group>"; };
+		B032529B21593CAF0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Settings.strings; sourceTree = "<group>"; };
+		B032529D21593CB00069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Settings.strings; sourceTree = "<group>"; };
+		B032529F21593EF30069F350 /* RootText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootText.swift; sourceTree = "<group>"; };
+		B03252A42159403E0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Root.strings; sourceTree = "<group>"; };
+		B03252A6215940400069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Root.strings; sourceTree = "<group>"; };
+		B03252AA215941C00069F350 /* AlertText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertText.swift; sourceTree = "<group>"; };
+		B03252AD2159431D0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Alert.strings; sourceTree = "<group>"; };
+		B03252AF2159431E0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Alert.strings; sourceTree = "<group>"; };
+		B03252B0215946060069F350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		B03252B2215946080069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
+		B03252B3215946090069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Info.plist; sourceTree = "<group>"; };
 		B077ED17212881890001CBAA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B0A2F351215661E3002C340F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B0A2F35521566C9A002C340F /* PersonListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -89,7 +125,6 @@
 		B0B9684B2124A5910002410B /* RandomizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizeViewController.swift; sourceTree = "<group>"; };
 		B0B968502124A5930002410B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B0B968532124A5930002410B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B0B968552124A5930002410B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0B9685A2124A5930002410B /* GroupRandomizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupRandomizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B9685E2124A5930002410B /* RandomizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerTests.swift; sourceTree = "<group>"; };
 		B0B968602124A5930002410B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -222,6 +257,74 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		B0325275215931CE0069F350 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B03252A7215941AC0069F350 /* Alert */,
+				B032529E21593EE30069F350 /* Root */,
+				B032529121593B970069F350 /* Settings */,
+				B032529021593B780069F350 /* Groups */,
+				B0325285215939180069F350 /* Randomize */,
+				B0325280215935DB0069F350 /* People */,
+				B0325283215936370069F350 /* Localizable.swift */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		B0325280215935DB0069F350 /* People */ = {
+			isa = PBXGroup;
+			children = (
+				B032528E21593B5B0069F350 /* People.strings */,
+				B0325281215935ED0069F350 /* PeopleText.swift */,
+			);
+			path = People;
+			sourceTree = "<group>";
+		};
+		B0325285215939180069F350 /* Randomize */ = {
+			isa = PBXGroup;
+			children = (
+				B032528A215939940069F350 /* Randomize.strings */,
+				B03252862159392F0069F350 /* RandomizeText.swift */,
+			);
+			path = Randomize;
+			sourceTree = "<group>";
+		};
+		B032529021593B780069F350 /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				B032529621593C190069F350 /* Groups.strings */,
+				B032529221593BC00069F350 /* GroupsText.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		B032529121593B970069F350 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				B032529C21593CAF0069F350 /* Settings.strings */,
+				B032529821593C470069F350 /* SettingsText.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		B032529E21593EE30069F350 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				B032529F21593EF30069F350 /* RootText.swift */,
+				B03252A52159403E0069F350 /* Root.strings */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		B03252A7215941AC0069F350 /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				B03252AA215941C00069F350 /* AlertText.swift */,
+				B03252AE2159431D0069F350 /* Alert.strings */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		B077ED19212881900001CBAA /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +374,7 @@
 		B0B968482124A5910002410B /* GroupRandomizer */ = {
 			isa = PBXGroup;
 			children = (
+				B0325275215931CE0069F350 /* Localization */,
 				B02CB15B213943CB005CAFBB /* StoreKit */,
 				B02CB14B21393274005CAFBB /* Model */,
 				B0BFDD2C2137ED2900656396 /* Navigation */,
@@ -278,7 +382,7 @@
 				B0B968702124ACE70002410B /* Extensions */,
 				B077ED19212881900001CBAA /* Storage */,
 				B0B968782124B6DD0002410B /* ViewController */,
-				B0B968552124A5930002410B /* Info.plist */,
+				B03252B1215946060069F350 /* Info.plist */,
 			);
 			path = GroupRandomizer;
 			sourceTree = "<group>";
@@ -417,6 +521,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = B0B9683D2124A5910002410B;
 			productRefGroup = B0B968472124A5910002410B /* Products */;
@@ -434,8 +539,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B032529421593C190069F350 /* Groups.strings in Resources */,
 				B0B968542124A5930002410B /* LaunchScreen.storyboard in Resources */,
 				B0B968512124A5930002410B /* Assets.xcassets in Resources */,
+				B032529A21593CAF0069F350 /* Settings.strings in Resources */,
+				B0325288215939940069F350 /* Randomize.strings in Resources */,
+				B03252AC2159431D0069F350 /* Alert.strings in Resources */,
+				B032528C21593B5B0069F350 /* People.strings in Resources */,
+				B03252A32159403E0069F350 /* Root.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -454,14 +565,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				B0BFDD3B2138249900656396 /* PeopleNavigator.swift in Sources */,
+				B03252AB215941C00069F350 /* AlertText.swift in Sources */,
 				B02CB157213941FF005CAFBB /* Bundle+Extension.swift in Sources */,
 				B0B9686B2124A5BB0002410B /* Group.swift in Sources */,
 				B0A2F352215661E3002C340F /* UIColor+Extension.swift in Sources */,
+				B03252A021593EF30069F350 /* RootText.swift in Sources */,
 				B0BFDD3F21382A0500656396 /* RootNavigatorDelegate.swift in Sources */,
 				B0BFDD302137EDD000656396 /* RootNavigator.swift in Sources */,
 				B02CB15421393659005CAFBB /* SettingsSectionModel.swift in Sources */,
 				B02CB169213950C7005CAFBB /* SKStoreDelegate.swift in Sources */,
 				B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */,
+				B0325282215935ED0069F350 /* PeopleText.swift in Sources */,
 				B02CB1632139455C005CAFBB /* SettingsViewControllerDelegate.swift in Sources */,
 				B0A2F35621566C9A002C340F /* PersonListViewControllerDelegate.swift in Sources */,
 				B02CB1482139300E005CAFBB /* SettingsViewController.swift in Sources */,
@@ -471,6 +585,7 @@
 				B0B968722124ACFB0002410B /* Array+Extension.swift in Sources */,
 				B0B9686F2124A7BB0002410B /* Randomizer.swift in Sources */,
 				B0B9684C2124A5910002410B /* RandomizeViewController.swift in Sources */,
+				B032529921593C470069F350 /* SettingsText.swift in Sources */,
 				B0BFDD2E2137ED3F00656396 /* Navigator.swift in Sources */,
 				B02CB14E21393292005CAFBB /* SettingsModel.swift in Sources */,
 				B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */,
@@ -483,10 +598,13 @@
 				B02CB14A2139309B005CAFBB /* SettingsNavigator.swift in Sources */,
 				B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */,
 				B0D8550F213FC24F004A41ED /* SKProduct+Extension.swift in Sources */,
+				B032529321593BC00069F350 /* GroupsText.swift in Sources */,
 				B0BFDD3D2138286C00656396 /* RandomizeViewControllerDelegate.swift in Sources */,
 				B0ED0D972127387C00313603 /* PersonListViewController.swift in Sources */,
 				B0A2F35821566E82002C340F /* GroupsListViewControllerDelegate.swift in Sources */,
 				B02CB16D213956CE005CAFBB /* SettingsCellType.swift in Sources */,
+				B0325284215936370069F350 /* Localizable.swift in Sources */,
+				B03252872159392F0069F350 /* RandomizeText.swift in Sources */,
 				B077ED18212881890001CBAA /* Storage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,10 +634,75 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B032528A215939940069F350 /* Randomize.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B0325289215939940069F350 /* en */,
+				B032528B2159399C0069F350 /* de */,
+			);
+			name = Randomize.strings;
+			sourceTree = "<group>";
+		};
+		B032528E21593B5B0069F350 /* People.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B032528D21593B5B0069F350 /* en */,
+				B032528F21593B5D0069F350 /* de */,
+			);
+			name = People.strings;
+			sourceTree = "<group>";
+		};
+		B032529621593C190069F350 /* Groups.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B032529521593C190069F350 /* en */,
+				B032529721593C1A0069F350 /* de */,
+			);
+			name = Groups.strings;
+			sourceTree = "<group>";
+		};
+		B032529C21593CAF0069F350 /* Settings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B032529B21593CAF0069F350 /* en */,
+				B032529D21593CB00069F350 /* de */,
+			);
+			name = Settings.strings;
+			sourceTree = "<group>";
+		};
+		B03252A52159403E0069F350 /* Root.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B03252A42159403E0069F350 /* en */,
+				B03252A6215940400069F350 /* de */,
+			);
+			name = Root.strings;
+			sourceTree = "<group>";
+		};
+		B03252AE2159431D0069F350 /* Alert.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B03252AD2159431D0069F350 /* en */,
+				B03252AF2159431E0069F350 /* de */,
+			);
+			name = Alert.strings;
+			sourceTree = "<group>";
+		};
+		B03252B1215946060069F350 /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B03252B0215946060069F350 /* Base */,
+				B03252B2215946080069F350 /* en */,
+				B03252B3215946090069F350 /* de */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
 		B0B968522124A5930002410B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B0B968532124A5930002410B /* Base */,
+				B0325278215932500069F350 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -531,6 +714,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -592,6 +776,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

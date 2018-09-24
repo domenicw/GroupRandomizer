@@ -53,7 +53,7 @@ public class RootNavigator {
         
         let navControllers = self.childCoordinators.map({$0.navigationController})
         self.tabBarController.viewControllers = navControllers
-        self.tabBarController.tabBar.tintColor = UIColor(named: "lightBlue")
+        self.tabBarController.tabBar.tintColor = .lightBlue
         
         if self.model.peopleIsEmpty() {
             self.tabBarController.selectedIndex = Tabs.people.rawValue
@@ -68,7 +68,7 @@ public class RootNavigator {
     func createGroupsList() {
         let groupsNavigator = GroupsNavigator(model: self.model)
         groupsNavigator.delegate = self
-        groupsNavigator.navigationController.tabBarItem = UITabBarItem(title: "Groups", image: UIImage(named: "group"), tag: Tabs.groups.rawValue)
+        groupsNavigator.navigationController.tabBarItem = UITabBarItem(title: RootText.groupTabTitle.localized, image: UIImage(named: "group"), tag: Tabs.groups.rawValue)
         self.childCoordinators.append(groupsNavigator)
     }
     
@@ -76,14 +76,14 @@ public class RootNavigator {
     func createPeopleList() {
         let peopleNavigator = PeopleNavigator(model: self.model)
         peopleNavigator.delegate = self
-        peopleNavigator.navigationController.tabBarItem = UITabBarItem(title: "People", image: UIImage(named: "people"), tag: Tabs.people.rawValue)
+        peopleNavigator.navigationController.tabBarItem = UITabBarItem(title: RootText.peopleTabTitle.localized, image: UIImage(named: "people"), tag: Tabs.people.rawValue)
         self.childCoordinators.append(peopleNavigator)
     }
     
     /// Creates settings navigator
     func createSettings() {
         let settingsNavigator = SettingsNavigator()
-        settingsNavigator.navigationController.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(named: "settings"), tag: Tabs.settings.rawValue)
+        settingsNavigator.navigationController.tabBarItem = UITabBarItem(title: RootText.settingsTabTitle.localized, image: UIImage(named: "settings"), tag: Tabs.settings.rawValue)
         self.childCoordinators.append(settingsNavigator)
     }
     

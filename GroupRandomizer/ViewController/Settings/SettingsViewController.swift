@@ -40,7 +40,7 @@ public class SettingsViewController: UITableViewController {
     public override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.title = "Settings"
+        self.title = SettingsText.viewTitle.localized
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .always
     }
@@ -87,7 +87,7 @@ extension SettingsViewController {
         cell.detailTextLabel?.text = cellModel.detailText
         cell.textLabel?.numberOfLines = 0
         cell.accessoryType = cellModel.action.indicator()
-        cell.tintColor = UIColor(named: "lightBlue")
+        cell.tintColor = .lightBlue
         
         if cellModel.action == .none {
             cell.selectionStyle = .none

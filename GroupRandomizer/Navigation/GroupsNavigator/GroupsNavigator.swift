@@ -50,13 +50,13 @@ extension GroupsNavigator: GroupsListViewControllerDelegate {
     }
     
     public func changeNumberOfGroups() {
-        let alert = UIAlertController(title: "Number of Groups", message: nil, preferredStyle: .alert)
+        let alert = UIAlertController(title: AlertText.nrGroupsTitle.localized, message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.text = "\(self.model.numberOfGroups)"
             textField.keyboardType = UIKeyboardType.decimalPad
         }
         
-        let saveAction = UIAlertAction(title: "Save", style: .default) { (action) in
+        let saveAction = UIAlertAction(title: AlertText.genericSaveTitle.localized, style: .default) { (action) in
             if let numberOfGroups = alert.textFields?[0].text {
                 self.model.numberOfGroups = Int(numberOfGroups) ?? 2
                 self.randomize()
@@ -64,7 +64,7 @@ extension GroupsNavigator: GroupsListViewControllerDelegate {
         }
         alert.addAction(saveAction)
         
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: AlertText.genericCancelTitle.localized, style: .cancel, handler: nil)
         alert.addAction(cancelAction)
         
         self.navigationController.present(alert, animated: true, completion: nil)

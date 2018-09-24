@@ -1,0 +1,21 @@
+/* 
+  Alert.strings
+  GroupRandomizer
+
+  Created by Domenic Wüthrich on 24.09.18.
+  Copyright © 2018 Domenic Wüthrich. All rights reserved.
+*/
+
+"generic_save_title" = "Save";
+
+"generic_cancel_title" = "Cancel";
+
+"nr_groups_title" = "Number of Groups";
+
+"add_person_name_title" = "Add Person";
+
+"add_person_name_placeholder" = "Name of person";
+
+"edit_person_name_title" = "Change Name";
+
+

@@ -32,12 +32,11 @@ public class SettingsModel {
     
     public func add(products: [SKProduct]) {
         let cellModels = products.map { (product) -> SettingsCellModel in
-            print(String(describing: product.priceLocale))
             let tipJarCell = SettingsCellModel(text: product.localizedTitle, detailText: product.localizedPrice, action: .tipJar, cellType: .tipJar)
             return tipJarCell
         }
         
-        let tipJarSection = SettingsSectionModel(headerText: "Tip Jar", footerText: "Thank you for supporting my work 😊", cellModels: cellModels)
+        let tipJarSection = SettingsSectionModel(headerText: SettingsText.tipJarHeaderText.localized, footerText: SettingsText.tipJarFooterText.localized, cellModels: cellModels)
         
         self.sectionModels.insert(tipJarSection, at: 1)
     }
@@ -47,14 +46,15 @@ public class SettingsModel {
 extension SettingsModel {
     
     public static func create() -> SettingsModel {
-        let infoCell = SettingsCellModel(text: "Randomizer takes the hard part out of making game groups. Quickly add people and assign them randomly to your desired number of groups.", action: .none)
-        let infoSection = SettingsSectionModel(headerText: "Information", footerText: nil, cellModels: [infoCell])
+        let infoCell = SettingsCellModel(text: SettingsText.appInfoText.localized, action: .none)
+        let infoSection = SettingsSectionModel(headerText: SettingsText.appInfoTitle.localized, footerText: nil, cellModels: [infoCell])
         
         var disclosureFooterText: String
         if let release = Bundle.main.releaseVersionNumber, let build = Bundle.main.buildVersionNumber {
-            disclosureFooterText = "Domenic Wüthrich © 2018\nVersion \(release) (\(build))"
+            let baseString = SettingsText.appInfoDisclosureFooterTextWithVersion.localized
+            disclosureFooterText = String(format: baseString, release, build)
         } else {
-            disclosureFooterText = "Domenic Wüthrich © 2018"
+            disclosureFooterText = SettingsText.appInfoDisclosureFooterTextNoVersion.localized
         }
         let disclosureSection: SettingsSectionModel = SettingsSectionModel(headerText: nil, footerText: disclosureFooterText, cellModels: [], footerTextAlignment: .center)
         

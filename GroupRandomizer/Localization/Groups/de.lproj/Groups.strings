@@ -1,0 +1,13 @@
+/* 
+  Groups.strings
+  GroupRandomizer
+
+  Created by Domenic Wüthrich on 24.09.18.
+  Copyright © 2018 Domenic Wüthrich. All rights reserved.
+*/
+
+"view_title" = "Gruppen";
+
+"section_group_title" = "Gruppe Nr. %@";
+
+"number_button_title" = "Nr.";

@@ -36,7 +36,7 @@ public class GroupsListViewController: RandomizeViewController {
         
         self.navigationItem.rightBarButtonItems = [createNumberOfGroupsItem()]
         
-        self.title = "Groups"
+        self.title = GroupsText.viewTitle.localized
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -87,7 +87,8 @@ extension GroupsListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let title = "Group Nr. \(section+1)"
+        let baseString = GroupsText.sectionGroupTitle.localized
+        let title = String(format: baseString, String(describing: section+1))
         return title
     }
     
