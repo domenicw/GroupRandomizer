@@ -114,8 +114,8 @@
 		B03252AD2159431D0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Alert.strings; sourceTree = "<group>"; };
 		B03252AF2159431E0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Alert.strings; sourceTree = "<group>"; };
 		B03252B0215946060069F350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
-		B03252B2215946080069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
-		B03252B3215946090069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Info.plist; sourceTree = "<group>"; };
+		B03252B42159467B0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
+		B03252B52159467D0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Info.plist; sourceTree = "<group>"; };
 		B077ED17212881890001CBAA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B0A2F351215661E3002C340F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B0A2F35521566C9A002C340F /* PersonListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -692,8 +692,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				B03252B0215946060069F350 /* Base */,
-				B03252B2215946080069F350 /* en */,
-				B03252B3215946090069F350 /* de */,
+				B03252B42159467B0069F350 /* en */,
+				B03252B52159467D0069F350 /* de */,
 			);
 			name = Info.plist;
 			sourceTree = "<group>";
@@ -834,7 +834,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28J3L9UEGT;
-				INFOPLIST_FILE = GroupRandomizer/Info.plist;
+				INFOPLIST_FILE = GroupRandomizer/Base.lproj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -853,7 +853,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 28J3L9UEGT;
-				INFOPLIST_FILE = GroupRandomizer/Info.plist;
+				INFOPLIST_FILE = GroupRandomizer/Base.lproj/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
