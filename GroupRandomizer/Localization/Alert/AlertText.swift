@@ -15,9 +15,9 @@ public enum AlertText: String, Localizable {
     case genericSaveTitle = "generic_save_title"
     case genericCancelTitle = "generic_cancel_title"
     case nrGroupsTitle = "nr_groups_title"
-    case addPersonNameTitle = "add_person_name_title"
-    case addPersonNamePlaceholder = "add_person_name_placeholder"
-    case editPersonNameTitle = "edit_person_name_title"
+    case addPlayerNameTitle = "add_player_name_title"
+    case addPlayerNamePlaceholder = "add_player_name_placeholder"
+    case editPlayerNameTitle = "edit_player_name_title"
     
     // MARK: - Table Name
     

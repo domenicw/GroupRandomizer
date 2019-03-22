@@ -12,13 +12,14 @@ import XCTest
 class RandomizerTests: XCTestCase {
     
     var numberOfGroups: Int = 3
+    var numberOfPlayers: Int = 40
     
-    var people: [Person] = []
+    var players: [Player] = []
 
     override func setUp() {
-        for index in 0..<4 {
-            let person = Person(name: String(describing: index))
-            people.append(person)
+        for index in 0..<self.numberOfPlayers {
+            let player = Player(name: String(describing: index))
+            players.append(player)
         }
     }
 
@@ -27,7 +28,7 @@ class RandomizerTests: XCTestCase {
     }
 
     func testRandomizer() {
-        let model = RandomizerModel(numberOfGroups: self.numberOfGroups, people: self.people, groups: [])
+        let model = RandomizerModel(numberOfGroups: self.numberOfGroups, players: self.players, groups: [])
         
         Randomizer.randomize(model: model)
         
@@ -35,36 +36,42 @@ class RandomizerTests: XCTestCase {
         
         checkRandomToken(groups: model.groups)
         checkNumberOfGroups(groups: model.groups)
-        checkPeopleDistortion(groups: model.groups)
+        checkPlayerDistortion(groups: model.groups)
+        checkPlayerCount(groups: model.groups)
     }
     
     func checkRandomToken(groups: [Group]) {
         for group in groups {
-            for person in group.people {
-                XCTAssertFalse(person.randomToken == 0)
+            for player in group.players {
+                XCTAssertFalse(player.randomToken == 0)
             }
         }
     }
     
     func checkNumberOfGroups(groups: [Group]) {
-        XCTAssertTrue(self.numberOfGroups == groups.count)
+        XCTAssertEqual(self.numberOfGroups, groups.count)
     }
     
-    func checkPeopleDistortion(groups: [Group]) {
-        XCTAssertFalse(groups[0].people[0].name == people[0].name, "\(groups[0].people[0].name) == \(people[0].name)")
+    func checkPlayerDistortion(groups: [Group]) {
+        XCTAssertFalse(groups[0].players[0].name == players[0].name, "\(groups[0].players[0].name) == \(players[0].name)")
+    }
+    
+    func checkPlayerCount(groups: [Group]) {
+        let numberOfPlayers = groups.reduce(0, {$0 + $1.players.count})
+        XCTAssertEqual(numberOfPlayers, self.numberOfPlayers)
     }
     
     func print(groups: [Group]) {
         for group in groups {
             Swift.print("----------")
-            for person in group.people {
-                Swift.print(person.name)
+            for player in group.players {
+                Swift.print(player.name)
             }
         }
     }
     
     func testZeroGroups() {
-        let model = RandomizerModel(numberOfGroups: 2, people: [], groups: [])
+        let model = RandomizerModel(numberOfGroups: 2, players: [], groups: [])
         XCTAssert(model.numberOfGroups == 2)
         model.numberOfGroups = 0
         XCTAssert(model.numberOfGroups != 0)

@@ -12,10 +12,10 @@
 
 "nr_groups_title" = "Number of Groups";
 
-"add_person_name_title" = "Add Person";
+"add_player_name_title" = "Add Player";
 
-"add_person_name_placeholder" = "Name of person";
+"add_player_name_placeholder" = "Name of player";
 
-"edit_person_name_title" = "Change Name";
+"edit_player_name_title" = "Change Name";
 
 

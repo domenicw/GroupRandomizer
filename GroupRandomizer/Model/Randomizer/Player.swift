@@ -1,5 +1,5 @@
 //
-//  Person.swift
+//  Player.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 15.08.18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Person {
+public class Player {
     
     // MARK: - Variable
     
@@ -20,14 +20,14 @@ public class Person {
     
     // MARK: - Initializers
     
-    /// Initializers a new Person
+    /// Initializers a new Player
     /// - Parameter name: Name of person
     /// - Note: Sets randomToken to 0
     public convenience init(name: String) {
         self.init(name: name, randomToken: 0)
     }
     
-    /// Initializes a new Person
+    /// Initializes a new Player
     /// - Parameters:
     ///     - name: Name of person
     ///     - randomToken: Random double value for sorting

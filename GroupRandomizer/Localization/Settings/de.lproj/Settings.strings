@@ -12,10 +12,10 @@
 
 "tip_jar_footer_text" = "Danke, dass du meine Arbeit unterstützt 😊";
 
-"app_info_text" = "Randomizer nimmt den schweren Teil aus dem Spielgruppen machen. Füge Personen ganz schnell hinzu und verteile sie zufällig auf deine gewünschte Anzahl Gruppen auf.";
+"app_info_text" = "Randomizer nimmt den schweren Teil aus dem Spielgruppen machen. Füge Spieler ganz schnell hinzu und verteile sie zufällig auf deine gewünschte Anzahl Gruppen auf.";
 
 "app_info_title" = "Informationen";
 
-"app_info_disclosure_footer_text_with_version" = "Domenic Wüthrich © 2018\nVersion %@ (%@)";
+"app_info_disclosure_footer_text_with_version" = "Domenic Wüthrich © 2019\nVersion %@ (%@)";
 
-"app_info_disclosure_footer_text_no_version" = "Domenic Wüthrich © 2018";
+"app_info_disclosure_footer_text_no_version" = "Domenic Wüthrich © 2019";

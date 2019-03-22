@@ -1,11 +1,11 @@
 /* 
-  People.strings
+  Players.strings
   GroupRandomizer
 
   Created by Domenic Wüthrich on 24.09.18.
   Copyright © 2018 Domenic Wüthrich. All rights reserved.
 */
 
-"view_title" = "People";
+"view_title" = "Players";
 
 

@@ -9,14 +9,16 @@
 import Foundation
 import UIKit
 
-public class PersonListViewController: RandomizeViewController {
+public class PlayerListViewController: RandomizeViewController {
     
     // MARK: - View Variables
     
-    public var delegate: PersonListViewControllerDelegate?
+    public var delegate: PlayerListViewControllerDelegate?
+    
+    private let cellIdentifier: String = "playerCell"
     
     /// Randomizer
-    var model: [Person] {
+    var model: [Player] {
         didSet {
             self.tableView.reloadData()
         }
@@ -24,7 +26,7 @@ public class PersonListViewController: RandomizeViewController {
     
     // MARK: - Initializers
     
-    public init(model: [Person]) {
+    public init(model: [Player]) {
         self.model = model
         
         super.init()
@@ -34,7 +36,7 @@ public class PersonListViewController: RandomizeViewController {
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
-        self.title = PeopleText.viewTitle.localized
+        self.title = PlayersText.viewTitle.localized
         
     }
     
@@ -47,21 +49,21 @@ public class PersonListViewController: RandomizeViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "personCell")
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         self.tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
     // MARK: - View Creation
     
     private func createAddItem() -> UIBarButtonItem {
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addPerson))
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(self.addPlayer))
         addButton.tintColor =  .lightBlue
         
         return addButton
     }
     
     private func createEditItem() -> UIBarButtonItem {
-        let button = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.editPersonList))
+        let button = UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(self.editPlayerList))
         button.tintColor = .lightBlue
         
         return button
@@ -76,13 +78,13 @@ public class PersonListViewController: RandomizeViewController {
     
     // MARK: - View Interaction
     
-    @objc public func addPerson() {
-        debugPrint("🚨 Adding person")
+    @objc public func addPlayer() {
+        debugPrint("🚨 Adding player")
         
-        self.delegate?.addPerson()
+        self.delegate?.addPlayer()
     }
     
-    @objc private func editPersonList() {
+    @objc private func editPlayerList() {
         self.tableView.setEditing(true, animated: true)
         self.navigationItem.rightBarButtonItems = [createDoneItem()]
     }
@@ -92,10 +94,10 @@ public class PersonListViewController: RandomizeViewController {
         self.navigationItem.rightBarButtonItems = [createAddItem(), createEditItem()]
     }
     
-    @objc private func changeNameOfPerson(index: Int) {
-        debugPrint("🚨 Changing Persons Name")
+    @objc private func changeNameOfPlayer(index: Int) {
+        debugPrint("🚨 Changing player Name")
         
-        self.delegate?.editNameOfPerson(index)
+        self.delegate?.editNameOfPlayer(index)
     }
     
     @objc public override func randomizeGroups() {
@@ -105,16 +107,16 @@ public class PersonListViewController: RandomizeViewController {
 
 // MARK: - Class Extension
 
-extension PersonListViewController: UITableViewDelegate {
+extension PlayerListViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            self.delegate?.removePerson(indexPath.row)
+            self.delegate?.removePlayer(indexPath.row)
         }
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.changeNameOfPerson(index: indexPath.row)
+        self.changeNameOfPlayer(index: indexPath.row)
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -123,7 +125,7 @@ extension PersonListViewController: UITableViewDelegate {
     }
 }
 
-extension PersonListViewController: UITableViewDataSource {
+extension PlayerListViewController: UITableViewDataSource {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -134,7 +136,7 @@ extension PersonListViewController: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "personCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) else {
             return UITableViewCell()
         }
         

@@ -12,6 +12,6 @@ public protocol RandomizerModelDelegate: class {
     
     func groupsDidChange()
     
-    func peopleDidChange()
+    func playersDidChange()
     
 }

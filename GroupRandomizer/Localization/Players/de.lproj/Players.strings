@@ -1,13 +1,11 @@
 /* 
-  Root.strings
+  Players.strings
   GroupRandomizer
 
   Created by Domenic Wüthrich on 24.09.18.
   Copyright © 2018 Domenic Wüthrich. All rights reserved.
 */
 
-"group_tap_title" = "Groups";
+"view_title" = "Spieler";
 
-"players_tab_title" = "Players";
 
-"settings_tab_title" = "Settings";

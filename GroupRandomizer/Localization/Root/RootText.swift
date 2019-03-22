@@ -13,7 +13,7 @@ public enum RootText: String, Localizable {
     // MARK: - Text Cases
     
     case groupTabTitle = "group_tap_title"
-    case peopleTabTitle = "people_tab_title"
+    case playersTabTitle = "players_tab_title"
     case settingsTabTitle = "settings_tab_title"
     
     // MARK: - Table Name

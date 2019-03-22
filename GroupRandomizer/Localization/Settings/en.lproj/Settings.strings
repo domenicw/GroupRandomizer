@@ -12,10 +12,10 @@
 
 "tip_jar_footer_text" = "Thank you for supporting my work 😊";
 
-"app_info_text" = "Randomizer takes the hard part out of making game groups. Quickly add people and assign them randomly to your desired number of groups.";
+"app_info_text" = "Randomizer takes the hard part out of making game groups. Quickly add players and assign them randomly to your desired number of groups.";
 
 "app_info_title" = "Information";
 
-"app_info_disclosure_footer_text_with_version" = "Domenic Wüthrich © 2018\nVersion %@ (%@)";
+"app_info_disclosure_footer_text_with_version" = "Domenic Wüthrich © 2019\nVersion %@ (%@)";
 
-"app_info_disclosure_footer_text_no_version" = "Domenic Wüthrich © 2018";
+"app_info_disclosure_footer_text_no_version" = "Domenic Wüthrich © 2019";

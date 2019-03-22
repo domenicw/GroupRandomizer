@@ -22,11 +22,11 @@
 		B02CB16B213951E6005CAFBB /* SKRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16A213951E6005CAFBB /* SKRating.swift */; };
 		B02CB16D213956CE005CAFBB /* SettingsCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16C213956CE005CAFBB /* SettingsCellType.swift */; };
 		B02CB16F21395FAD005CAFBB /* SettingsModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB16E21395FAD005CAFBB /* SettingsModelDelegate.swift */; };
-		B0325282215935ED0069F350 /* PeopleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0325281215935ED0069F350 /* PeopleText.swift */; };
+		B0325282215935ED0069F350 /* PlayersText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0325281215935ED0069F350 /* PlayersText.swift */; };
 		B0325284215936370069F350 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0325283215936370069F350 /* Localizable.swift */; };
 		B03252872159392F0069F350 /* RandomizeText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03252862159392F0069F350 /* RandomizeText.swift */; };
 		B0325288215939940069F350 /* Randomize.strings in Resources */ = {isa = PBXBuildFile; fileRef = B032528A215939940069F350 /* Randomize.strings */; };
-		B032528C21593B5B0069F350 /* People.strings in Resources */ = {isa = PBXBuildFile; fileRef = B032528E21593B5B0069F350 /* People.strings */; };
+		B032528C21593B5B0069F350 /* Players.strings in Resources */ = {isa = PBXBuildFile; fileRef = B032528E21593B5B0069F350 /* Players.strings */; };
 		B032529321593BC00069F350 /* GroupsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B032529221593BC00069F350 /* GroupsText.swift */; };
 		B032529421593C190069F350 /* Groups.strings in Resources */ = {isa = PBXBuildFile; fileRef = B032529621593C190069F350 /* Groups.strings */; };
 		B032529921593C470069F350 /* SettingsText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B032529821593C470069F350 /* SettingsText.swift */; };
@@ -37,7 +37,7 @@
 		B03252AC2159431D0069F350 /* Alert.strings in Resources */ = {isa = PBXBuildFile; fileRef = B03252AE2159431D0069F350 /* Alert.strings */; };
 		B077ED18212881890001CBAA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
 		B0A2F352215661E3002C340F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2F351215661E3002C340F /* UIColor+Extension.swift */; };
-		B0A2F35621566C9A002C340F /* PersonListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2F35521566C9A002C340F /* PersonListViewControllerDelegate.swift */; };
+		B0A2F35621566C9A002C340F /* PlayerListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2F35521566C9A002C340F /* PlayerListViewControllerDelegate.swift */; };
 		B0A2F35821566E82002C340F /* GroupsListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2F35721566E82002C340F /* GroupsListViewControllerDelegate.swift */; };
 		B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B968492124A5910002410B /* AppDelegate.swift */; };
 		B0B9684C2124A5910002410B /* RandomizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9684B2124A5910002410B /* RandomizeViewController.swift */; };
@@ -45,11 +45,11 @@
 		B0B968542124A5930002410B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0B968522124A5930002410B /* LaunchScreen.storyboard */; };
 		B0B9685F2124A5930002410B /* RandomizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9685E2124A5930002410B /* RandomizerTests.swift */; };
 		B0B9686B2124A5BB0002410B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686A2124A5BB0002410B /* Group.swift */; };
-		B0B9686D2124A6010002410B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686C2124A6010002410B /* Person.swift */; };
+		B0B9686D2124A6010002410B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686C2124A6010002410B /* Player.swift */; };
 		B0B9686F2124A7BB0002410B /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686E2124A7BB0002410B /* Randomizer.swift */; };
 		B0B968722124ACFB0002410B /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B968712124ACFB0002410B /* Array+Extension.swift */; };
 		B0B968732124B10E0002410B /* Randomizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686E2124A7BB0002410B /* Randomizer.swift */; };
-		B0B968742124B1110002410B /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686C2124A6010002410B /* Person.swift */; };
+		B0B968742124B1110002410B /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686C2124A6010002410B /* Player.swift */; };
 		B0B968752124B1140002410B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B9686A2124A5BB0002410B /* Group.swift */; };
 		B0BFDD2E2137ED3F00656396 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD2D2137ED3F00656396 /* Navigator.swift */; };
 		B0BFDD302137EDD000656396 /* RootNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD2F2137EDD000656396 /* RootNavigator.swift */; };
@@ -59,11 +59,11 @@
 		B0BFDD3721381EEC00656396 /* RandomizerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD332137FA1F00656396 /* RandomizerModel.swift */; };
 		B0BFDD3821381F0900656396 /* RandomizerModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */; };
 		B0BFDD3921381F0D00656396 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
-		B0BFDD3B2138249900656396 /* PeopleNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3A2138249900656396 /* PeopleNavigator.swift */; };
+		B0BFDD3B2138249900656396 /* PlayerNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3A2138249900656396 /* PlayerNavigator.swift */; };
 		B0BFDD3D2138286C00656396 /* RandomizeViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */; };
 		B0BFDD3F21382A0500656396 /* RootNavigatorDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */; };
 		B0D8550F213FC24F004A41ED /* SKProduct+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0D8550E213FC24F004A41ED /* SKProduct+Extension.swift */; };
-		B0ED0D972127387C00313603 /* PersonListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D962127387C00313603 /* PersonListViewController.swift */; };
+		B0ED0D972127387C00313603 /* PlayerListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D962127387C00313603 /* PlayerListViewController.swift */; };
 		B0ED0D9B2128171900313603 /* GroupsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0ED0D9A2128171900313603 /* GroupsListViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,13 +94,13 @@
 		B02CB16C213956CE005CAFBB /* SettingsCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCellType.swift; sourceTree = "<group>"; };
 		B02CB16E21395FAD005CAFBB /* SettingsModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModelDelegate.swift; sourceTree = "<group>"; };
 		B0325278215932500069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
-		B0325281215935ED0069F350 /* PeopleText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleText.swift; sourceTree = "<group>"; };
+		B0325281215935ED0069F350 /* PlayersText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersText.swift; sourceTree = "<group>"; };
 		B0325283215936370069F350 /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		B03252862159392F0069F350 /* RandomizeText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizeText.swift; sourceTree = "<group>"; };
 		B0325289215939940069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Randomize.strings; sourceTree = "<group>"; };
 		B032528B2159399C0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Randomize.strings; sourceTree = "<group>"; };
-		B032528D21593B5B0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/People.strings; sourceTree = "<group>"; };
-		B032528F21593B5D0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/People.strings; sourceTree = "<group>"; };
+		B032528D21593B5B0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Players.strings; sourceTree = "<group>"; };
+		B032528F21593B5D0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Players.strings; sourceTree = "<group>"; };
 		B032529221593BC00069F350 /* GroupsText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsText.swift; sourceTree = "<group>"; };
 		B032529521593C190069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Groups.strings; sourceTree = "<group>"; };
 		B032529721593C1A0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Groups.strings; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 		B03252B52159467D0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Info.plist; sourceTree = "<group>"; };
 		B077ED17212881890001CBAA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B0A2F351215661E3002C340F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
-		B0A2F35521566C9A002C340F /* PersonListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewControllerDelegate.swift; sourceTree = "<group>"; };
+		B0A2F35521566C9A002C340F /* PlayerListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B0A2F35721566E82002C340F /* GroupsListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B0B968462124A5910002410B /* GroupRandomizer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupRandomizer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0B968492124A5910002410B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		B0B9685E2124A5930002410B /* RandomizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerTests.swift; sourceTree = "<group>"; };
 		B0B968602124A5930002410B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B0B9686A2124A5BB0002410B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
-		B0B9686C2124A6010002410B /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		B0B9686C2124A6010002410B /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		B0B9686E2124A7BB0002410B /* Randomizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Randomizer.swift; sourceTree = "<group>"; };
 		B0B968712124ACFB0002410B /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
 		B0BFDD2D2137ED3F00656396 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
@@ -137,11 +137,11 @@
 		B0BFDD312137F7F800656396 /* GroupsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsNavigator.swift; sourceTree = "<group>"; };
 		B0BFDD332137FA1F00656396 /* RandomizerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerModel.swift; sourceTree = "<group>"; };
 		B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizerModelDelegate.swift; sourceTree = "<group>"; };
-		B0BFDD3A2138249900656396 /* PeopleNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleNavigator.swift; sourceTree = "<group>"; };
+		B0BFDD3A2138249900656396 /* PlayerNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNavigator.swift; sourceTree = "<group>"; };
 		B0BFDD3C2138286C00656396 /* RandomizeViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomizeViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B0BFDD3E21382A0500656396 /* RootNavigatorDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootNavigatorDelegate.swift; sourceTree = "<group>"; };
 		B0D8550E213FC24F004A41ED /* SKProduct+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKProduct+Extension.swift"; sourceTree = "<group>"; };
-		B0ED0D962127387C00313603 /* PersonListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListViewController.swift; sourceTree = "<group>"; };
+		B0ED0D962127387C00313603 /* PlayerListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListViewController.swift; sourceTree = "<group>"; };
 		B0ED0D9A2128171900313603 /* GroupsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsListViewController.swift; sourceTree = "<group>"; };
 		B0ED0D9C2128285700313603 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -215,12 +215,12 @@
 			path = RootNavigator;
 			sourceTree = "<group>";
 		};
-		B02CB15D213944E3005CAFBB /* PeopleNavigator */ = {
+		B02CB15D213944E3005CAFBB /* PlayerNavigator */ = {
 			isa = PBXGroup;
 			children = (
-				B0BFDD3A2138249900656396 /* PeopleNavigator.swift */,
+				B0BFDD3A2138249900656396 /* PlayerNavigator.swift */,
 			);
-			path = PeopleNavigator;
+			path = PlayerNavigator;
 			sourceTree = "<group>";
 		};
 		B02CB15E213944EF005CAFBB /* GroupsNavigator */ = {
@@ -265,19 +265,19 @@
 				B032529121593B970069F350 /* Settings */,
 				B032529021593B780069F350 /* Groups */,
 				B0325285215939180069F350 /* Randomize */,
-				B0325280215935DB0069F350 /* People */,
+				B0325280215935DB0069F350 /* Players */,
 				B0325283215936370069F350 /* Localizable.swift */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
 		};
-		B0325280215935DB0069F350 /* People */ = {
+		B0325280215935DB0069F350 /* Players */ = {
 			isa = PBXGroup;
 			children = (
-				B032528E21593B5B0069F350 /* People.strings */,
-				B0325281215935ED0069F350 /* PeopleText.swift */,
+				B032528E21593B5B0069F350 /* Players.strings */,
+				B0325281215935ED0069F350 /* PlayersText.swift */,
 			);
-			path = People;
+			path = Players;
 			sourceTree = "<group>";
 		};
 		B0325285215939180069F350 /* Randomize */ = {
@@ -301,8 +301,8 @@
 		B032529121593B970069F350 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				B032529C21593CAF0069F350 /* Settings.strings */,
 				B032529821593C470069F350 /* SettingsText.swift */,
+				B032529C21593CAF0069F350 /* Settings.strings */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -342,13 +342,13 @@
 			path = Groups;
 			sourceTree = "<group>";
 		};
-		B0A2F35421566C80002C340F /* People */ = {
+		B0A2F35421566C80002C340F /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				B0ED0D962127387C00313603 /* PersonListViewController.swift */,
-				B0A2F35521566C9A002C340F /* PersonListViewControllerDelegate.swift */,
+				B0ED0D962127387C00313603 /* PlayerListViewController.swift */,
+				B0A2F35521566C9A002C340F /* PlayerListViewControllerDelegate.swift */,
 			);
-			path = People;
+			path = Player;
 			sourceTree = "<group>";
 		};
 		B0B9683D2124A5910002410B = {
@@ -400,7 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				B0B9686A2124A5BB0002410B /* Group.swift */,
-				B0B9686C2124A6010002410B /* Person.swift */,
+				B0B9686C2124A6010002410B /* Player.swift */,
 				B0B9686E2124A7BB0002410B /* Randomizer.swift */,
 				B0BFDD332137FA1F00656396 /* RandomizerModel.swift */,
 				B0BFDD352138181800656396 /* RandomizerModelDelegate.swift */,
@@ -432,7 +432,7 @@
 		B0B968782124B6DD0002410B /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				B0A2F35421566C80002C340F /* People */,
+				B0A2F35421566C80002C340F /* Player */,
 				B0A2F35321566C7A002C340F /* Groups */,
 				B02CB16021394521005CAFBB /* Randomizer */,
 				B02CB1612139453F005CAFBB /* Settings */,
@@ -446,7 +446,7 @@
 				B0BFDD2D2137ED3F00656396 /* Navigator.swift */,
 				B02CB15F213944F6005CAFBB /* SettingsNavigator */,
 				B02CB15E213944EF005CAFBB /* GroupsNavigator */,
-				B02CB15D213944E3005CAFBB /* PeopleNavigator */,
+				B02CB15D213944E3005CAFBB /* PlayerNavigator */,
 				B02CB15C213944D8005CAFBB /* RootNavigator */,
 			);
 			path = Navigation;
@@ -545,7 +545,7 @@
 				B032529A21593CAF0069F350 /* Settings.strings in Resources */,
 				B0325288215939940069F350 /* Randomize.strings in Resources */,
 				B03252AC2159431D0069F350 /* Alert.strings in Resources */,
-				B032528C21593B5B0069F350 /* People.strings in Resources */,
+				B032528C21593B5B0069F350 /* Players.strings in Resources */,
 				B03252A32159403E0069F350 /* Root.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,7 +564,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0BFDD3B2138249900656396 /* PeopleNavigator.swift in Sources */,
+				B0BFDD3B2138249900656396 /* PlayerNavigator.swift in Sources */,
 				B03252AB215941C00069F350 /* AlertText.swift in Sources */,
 				B02CB157213941FF005CAFBB /* Bundle+Extension.swift in Sources */,
 				B0B9686B2124A5BB0002410B /* Group.swift in Sources */,
@@ -575,9 +575,9 @@
 				B02CB15421393659005CAFBB /* SettingsSectionModel.swift in Sources */,
 				B02CB169213950C7005CAFBB /* SKStoreDelegate.swift in Sources */,
 				B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */,
-				B0325282215935ED0069F350 /* PeopleText.swift in Sources */,
+				B0325282215935ED0069F350 /* PlayersText.swift in Sources */,
 				B02CB1632139455C005CAFBB /* SettingsViewControllerDelegate.swift in Sources */,
-				B0A2F35621566C9A002C340F /* PersonListViewControllerDelegate.swift in Sources */,
+				B0A2F35621566C9A002C340F /* PlayerListViewControllerDelegate.swift in Sources */,
 				B02CB1482139300E005CAFBB /* SettingsViewController.swift in Sources */,
 				B0BFDD322137F7F800656396 /* GroupsNavigator.swift in Sources */,
 				B02CB16721394777005CAFBB /* SKIAPHelper.swift in Sources */,
@@ -593,14 +593,14 @@
 				B02CB16F21395FAD005CAFBB /* SettingsModelDelegate.swift in Sources */,
 				B02CB150213932CF005CAFBB /* SettingsAction.swift in Sources */,
 				B02CB165213946F0005CAFBB /* SKIAPItem.swift in Sources */,
-				B0B9686D2124A6010002410B /* Person.swift in Sources */,
+				B0B9686D2124A6010002410B /* Player.swift in Sources */,
 				B02CB16B213951E6005CAFBB /* SKRating.swift in Sources */,
 				B02CB14A2139309B005CAFBB /* SettingsNavigator.swift in Sources */,
 				B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */,
 				B0D8550F213FC24F004A41ED /* SKProduct+Extension.swift in Sources */,
 				B032529321593BC00069F350 /* GroupsText.swift in Sources */,
 				B0BFDD3D2138286C00656396 /* RandomizeViewControllerDelegate.swift in Sources */,
-				B0ED0D972127387C00313603 /* PersonListViewController.swift in Sources */,
+				B0ED0D972127387C00313603 /* PlayerListViewController.swift in Sources */,
 				B0A2F35821566E82002C340F /* GroupsListViewControllerDelegate.swift in Sources */,
 				B02CB16D213956CE005CAFBB /* SettingsCellType.swift in Sources */,
 				B0325284215936370069F350 /* Localizable.swift in Sources */,
@@ -613,7 +613,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0B968742124B1110002410B /* Person.swift in Sources */,
+				B0B968742124B1110002410B /* Player.swift in Sources */,
 				B0BFDD3921381F0D00656396 /* Storage.swift in Sources */,
 				B0BFDD3721381EEC00656396 /* RandomizerModel.swift in Sources */,
 				B0B968732124B10E0002410B /* Randomizer.swift in Sources */,
@@ -643,13 +643,13 @@
 			name = Randomize.strings;
 			sourceTree = "<group>";
 		};
-		B032528E21593B5B0069F350 /* People.strings */ = {
+		B032528E21593B5B0069F350 /* Players.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B032528D21593B5B0069F350 /* en */,
 				B032528F21593B5D0069F350 /* de */,
 			);
-			name = People.strings;
+			name = Players.strings;
 			sourceTree = "<group>";
 		};
 		B032529621593C190069F350 /* Groups.strings */ = {

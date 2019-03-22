@@ -22,9 +22,9 @@ public class RandomizerModel {
         }
     }
     
-    public var people: [Person] {
+    public var players: [Player] {
         didSet {
-            self.delegates.forEach({ $0?.peopleDidChange() })
+            self.delegates.forEach({ $0?.playersDidChange() })
         }
     }
     
@@ -36,40 +36,40 @@ public class RandomizerModel {
     
     // MARK: - Initializers
     
-    public init(numberOfGroups: Int, people: [Person], groups: [Group]) {
+    public init(numberOfGroups: Int, players: [Player], groups: [Group]) {
         self.numberOfGroups = numberOfGroups
-        self.people = people
+        self.players = players
         self.groups = groups
         self.delegates = []
     }
     
     public convenience init() {
-        self.init(numberOfGroups: 2, people: [], groups: [])
+        self.init(numberOfGroups: 2, players: [], groups: [])
         self.retrieve()
     }
     
     // MARK: - Persistant Storage
     
-    /// Checks if people is empty
-    ///- Returns: True is people is empty
-    public func peopleIsEmpty() -> Bool {
-        return self.people.isEmpty
+    /// Checks if players is empty
+    ///- Returns: True is players is empty
+    public func playersIsEmpty() -> Bool {
+        return self.players.isEmpty
     }
     
-    /// Saves names of people and numberOfGroups to UserDefaults
+    /// Saves names of players and numberOfGroups to UserDefaults
     public func save() {
-        let names = self.people.map({$0.name})
+        let names = self.players.map({$0.name})
         Storage.save(names: names)
         Storage.save(numberOfGroups: self.numberOfGroups)
     }
     
-    /// Retrieves names of people and numberOfGroups from UserDefaults
+    /// Retrieves names of players and numberOfGroups from UserDefaults
     public func retrieve() {
         let names = Storage.retrieveNames()
-        self.people = names.map({Person(name: $0)})
+        self.players = names.map({Player(name: $0)})
         self.numberOfGroups = Storage.retrieveNumberOfGroups()
         
-        if !self.peopleIsEmpty() {
+        if !self.playersIsEmpty() {
             Randomizer.randomize(model: self)
         }
     }

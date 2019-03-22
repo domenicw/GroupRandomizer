@@ -26,7 +26,7 @@ public class RootNavigator {
     /// Tabs of tabBarController
     private enum Tabs: Int {
         case groups
-        case people
+        case players
         case settings
     }
     
@@ -48,15 +48,15 @@ public class RootNavigator {
     /// Sets up all tabs for tab bar controller
     private func setUpTabs() {
         self.createGroupsList()
-        self.createPeopleList()
+        self.createPlayersList()
         self.createSettings()
         
         let navControllers = self.childCoordinators.map({$0.navigationController})
         self.tabBarController.viewControllers = navControllers
         self.tabBarController.tabBar.tintColor = .lightBlue
         
-        if self.model.peopleIsEmpty() {
-            self.tabBarController.selectedIndex = Tabs.people.rawValue
+        if self.model.playersIsEmpty() {
+            self.tabBarController.selectedIndex = Tabs.players.rawValue
         } else {
             self.tabBarController.selectedIndex = Tabs.groups.rawValue
         }
@@ -72,12 +72,12 @@ public class RootNavigator {
         self.childCoordinators.append(groupsNavigator)
     }
     
-    /// Creates people list navigator
-    func createPeopleList() {
-        let peopleNavigator = PeopleNavigator(model: self.model)
-        peopleNavigator.delegate = self
-        peopleNavigator.navigationController.tabBarItem = UITabBarItem(title: RootText.peopleTabTitle.localized, image: UIImage(named: "people"), tag: Tabs.people.rawValue)
-        self.childCoordinators.append(peopleNavigator)
+    /// Creates players list navigator
+    func createPlayersList() {
+        let playerNavigator = PlayerNavigator(model: self.model)
+        playerNavigator.delegate = self
+        playerNavigator.navigationController.tabBarItem = UITabBarItem(title: RootText.playersTabTitle.localized, image: UIImage(named: "player"), tag: Tabs.players.rawValue)
+        self.childCoordinators.append(playerNavigator)
     }
     
     /// Creates settings navigator

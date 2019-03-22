@@ -12,23 +12,23 @@ public class Randomizer {
     
     // MARK: - Randomizer
     
-    /// Randomizes people into groups
+    /// Randomizes players into groups
     /// - Returns: Array of groups containing random persons
     public static func randomize(model: RandomizerModel) {
-        for person in model.people {
+        for person in model.players {
             let token = Double.random(in: 0..<100)
             person.randomToken = token
         }
         
-        let sorted = model.people.sorted(by: {$0.randomToken < $1.randomToken})
+        let sorted = model.players.sorted(by: {$0.randomToken < $1.randomToken})
         
-        var persons: [[Person]] = Array.init(repeating: [], count: model.numberOfGroups)
+        var players: [[Player]] = Array.init(repeating: [], count: model.numberOfGroups)
         
-        for (index, person) in sorted.enumerated() {
-            persons[index % model.numberOfGroups].append(person)
+        for (index, player) in sorted.enumerated() {
+            players[index % model.numberOfGroups].append(player)
         }
         
-        let groups = persons.map({Group(people: $0)})
+        let groups = players.map({Group(players: $0)})
         
         model.groups = groups
     }

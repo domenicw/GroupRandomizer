@@ -83,7 +83,7 @@ extension GroupsListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.model[section].people.count
+        return self.model[section].players.count
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -97,7 +97,7 @@ extension GroupsListViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        cell.textLabel?.text = self.model[indexPath.section].people[indexPath.row].name
+        cell.textLabel?.text = self.model[indexPath.section].players[indexPath.row].name
         cell.selectionStyle = .none
         
         return cell

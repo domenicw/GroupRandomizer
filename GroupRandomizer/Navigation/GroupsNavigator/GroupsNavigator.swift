@@ -39,7 +39,7 @@ extension GroupsNavigator: RandomizerModelDelegate {
         }
     }
     
-    public func peopleDidChange() {}
+    public func playersDidChange() {}
     
 }
 

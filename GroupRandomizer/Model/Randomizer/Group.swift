@@ -12,15 +12,15 @@ public class Group {
     
     // MARK: - Variables
     
-    /// Contains all people in this group
-    public var people: [Person]
+    /// Contains all players in this group
+    public var players: [Player]
     
     // MARK: - Intializers
     
     /// Initializes a new Group object
-    /// - Parameter persons: Array containing all people for this group
-    init(people: [Person]) {
-        self.people = people
+    /// - Parameter players: Array containing all players for this group
+    init(players: [Player]) {
+        self.players = players
     }
     
 }

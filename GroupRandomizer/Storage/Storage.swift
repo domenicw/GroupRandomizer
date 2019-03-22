@@ -33,21 +33,21 @@ public class Storage {
     }
     
     /// Saves all persons names to userDefaults
-    /// - Parameter names: Array of all the names of all the people to store
+    /// - Parameter names: Array of all the names of all the players to store
     public static func save(names: [String]) {
         self.defaults.set(names, forKey: Name.people.rawValue)
     }
     
     // MARK: - Retrieving
     
-    /// Retrieves number of groups to divide the people up into
-    /// - Returns: number of groups to divide people up into
+    /// Retrieves number of groups to divide the players up into
+    /// - Returns: number of groups to divide players up into
     public static func retrieveNumberOfGroups() -> Int {
         return self.defaults.integer(forKey: Name.numberOfGroups.rawValue)
     }
     
-    /// Retrieves all the names of all the people
-    /// - Returns: An Array containing all the names of all the people
+    /// Retrieves all the names of all the players
+    /// - Returns: An Array containing all the names of all the players
     public static func retrieveNames() -> [String] {
         let people = defaults.object(forKey: Name.people.rawValue) as? [String] ?? []
         return people

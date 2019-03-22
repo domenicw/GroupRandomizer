@@ -1,5 +1,5 @@
 //
-//  PeopleText.swift
+//  PlayersText.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 24.09.18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum PeopleText: String, Localizable {
+public enum PlayersText: String, Localizable {
     
     // MARK: - Text Cases
     
@@ -17,7 +17,7 @@ public enum PeopleText: String, Localizable {
     // MARK: - Table Name
     
     public var tableName: String {
-        return "People"
+        return "Players"
     }
     
 }

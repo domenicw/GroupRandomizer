@@ -1,5 +1,5 @@
 //
-//  PeopleNavigator.swift
+//  PlayerNavigator.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 30.08.18.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class PeopleNavigator: Navigator {
+public class PlayerNavigator: Navigator {
     
     // MARK: - Variables
     
@@ -22,40 +22,40 @@ public class PeopleNavigator: Navigator {
     // MARK: - Initializers
     
     public init(model: RandomizerModel) {
-        let peopleController = PersonListViewController(model: model.people)
-        self.navigationController = UINavigationController(rootViewController: peopleController)
+        let playerController = PlayerListViewController(model: model.players)
+        self.navigationController = UINavigationController(rootViewController: playerController)
         self.model = model
         self.model.add(delegate: self)
         
-        peopleController.delegate = self
+        playerController.delegate = self
     }
     
 }
 
-extension PeopleNavigator: RandomizerModelDelegate {
+extension PlayerNavigator: RandomizerModelDelegate {
     
     public func groupsDidChange() {}
     
-    public func peopleDidChange() {
-        if let viewController = self.navigationController.topViewController as? PersonListViewController {
-            viewController.model = self.model.people
+    public func playersDidChange() {
+        if let viewController = self.navigationController.topViewController as? PlayerListViewController {
+            viewController.model = self.model.players
         }
     }
     
 }
 
-extension PeopleNavigator: PersonListViewControllerDelegate {
+extension PlayerNavigator: PlayerListViewControllerDelegate {
     
-    public func addPerson() {
-        let alert = UIAlertController(title: AlertText.addPersonNameTitle.localized, message: nil, preferredStyle: .alert)
+    public func addPlayer() {
+        let alert = UIAlertController(title: AlertText.addPlayerNameTitle.localized, message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = AlertText.addPersonNamePlaceholder.localized
+            textField.placeholder = AlertText.addPlayerNamePlaceholder.localized
         }
         
         let saveAction = UIAlertAction(title: AlertText.genericSaveTitle.localized, style: .default) { (action) in
             if let name = alert.textFields?[0].text {
-                let person = Person(name: name)
-                self.model.people.append(person)
+                let person = Player(name: name)
+                self.model.players.append(person)
             }
         }
         alert.addAction(saveAction)
@@ -66,16 +66,16 @@ extension PeopleNavigator: PersonListViewControllerDelegate {
         self.navigationController.present(alert, animated: true, completion: nil)
     }
     
-    public func editNameOfPerson(_ index: Int) {
-        let alert = UIAlertController(title: AlertText.editPersonNameTitle.localized, message: nil, preferredStyle: .alert)
+    public func editNameOfPlayer(_ index: Int) {
+        let alert = UIAlertController(title: AlertText.editPlayerNameTitle.localized, message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
-            textField.placeholder = AlertText.addPersonNamePlaceholder.localized
-            textField.text = self.model.people[index].name
+            textField.placeholder = AlertText.addPlayerNamePlaceholder.localized
+            textField.text = self.model.players[index].name
         }
         
         let saveAction = UIAlertAction(title: AlertText.genericSaveTitle.localized, style: .default) { (action) in
             if let name = alert.textFields?[0].text {
-                self.model.people[index].name = name
+                self.model.players[index].name = name
             }
         }
         alert.addAction(saveAction)
@@ -88,8 +88,8 @@ extension PeopleNavigator: PersonListViewControllerDelegate {
         }
     }
     
-    public func removePerson(_ index: Int) {
-        self.model.people.remove(at: index)
+    public func removePlayer(_ index: Int) {
+        self.model.players.remove(at: index)
     }
     
     public func randomize() {
