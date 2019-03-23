@@ -22,7 +22,7 @@ public class PlayerNavigator: Navigator {
     // MARK: - Initializers
     
     public init(model: RandomizerModel) {
-        let playerController = PlayerListViewController(model: model.players)
+        let playerController = PlayersListViewController(model: model.players)
         self.navigationController = UINavigationController(rootViewController: playerController)
         self.model = model
         self.model.add(delegate: self)
@@ -37,14 +37,14 @@ extension PlayerNavigator: RandomizerModelDelegate {
     public func groupsDidChange() {}
     
     public func playersDidChange() {
-        if let viewController = self.navigationController.topViewController as? PlayerListViewController {
+        if let viewController = self.navigationController.topViewController as? PlayersListViewController {
             viewController.model = self.model.players
         }
     }
     
 }
 
-extension PlayerNavigator: PlayerListViewControllerDelegate {
+extension PlayerNavigator: PlayersListViewControllerDelegate {
     
     public func addPlayer() {
         let alert = UIAlertController(title: AlertText.addPlayerNameTitle.localized, message: nil, preferredStyle: .alert)

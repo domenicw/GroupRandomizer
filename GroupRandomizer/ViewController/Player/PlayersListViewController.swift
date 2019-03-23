@@ -1,5 +1,5 @@
 //
-//  PersonListTableViewController.swift
+//  PlayersListViewController.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 17.08.18.
@@ -9,11 +9,11 @@
 import Foundation
 import UIKit
 
-public class PlayerListViewController: RandomizeViewController {
+public class PlayersListViewController: RandomizeViewController {
     
     // MARK: - View Variables
     
-    public var delegate: PlayerListViewControllerDelegate?
+    public var delegate: PlayersListViewControllerDelegate?
     
     private let cellIdentifier: String = "playerCell"
     
@@ -35,6 +35,7 @@ public class PlayerListViewController: RandomizeViewController {
         
         self.tableView.delegate = self
         self.tableView.dataSource = self
+        self.tableView.tableFooterView = UIView(frame: .zero)
         
         self.title = PlayersText.viewTitle.localized
         
@@ -49,7 +50,7 @@ public class PlayerListViewController: RandomizeViewController {
     public override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
+        self.tableView.register(PlayerTableViewCell.self, forCellReuseIdentifier: self.cellIdentifier)
         self.tableView.separatorInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
@@ -107,7 +108,7 @@ public class PlayerListViewController: RandomizeViewController {
 
 // MARK: - Class Extension
 
-extension PlayerListViewController: UITableViewDelegate {
+extension PlayersListViewController: UITableViewDelegate {
     
     public func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -116,7 +117,12 @@ extension PlayerListViewController: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.changeNameOfPlayer(index: indexPath.row)
+        //self.changeNameOfPlayer(index: indexPath.row)
+        let playerViewController = PlayerDetailViewController()
+        playerViewController.nameTextField.text = self.model[indexPath.row].name
+        self.navigationController?.pushViewController(playerViewController, animated: true)
+        
+        
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -125,7 +131,7 @@ extension PlayerListViewController: UITableViewDelegate {
     }
 }
 
-extension PlayerListViewController: UITableViewDataSource {
+extension PlayersListViewController: UITableViewDataSource {
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -136,11 +142,12 @@ extension PlayerListViewController: UITableViewDataSource {
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) else {
-            return UITableViewCell()
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier) as? PlayerTableViewCell else {
+            return PlayerTableViewCell()
         }
         
-        cell.textLabel?.text = self.model[indexPath.row].name
+        cell.nameLabel.text = self.model[indexPath.row].name
+        cell.detailLabel.text = "Member of 2 grops"
         cell.selectionStyle = .default
         
         return cell

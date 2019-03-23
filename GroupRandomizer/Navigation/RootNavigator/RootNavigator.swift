@@ -33,7 +33,7 @@ public class RootNavigator {
     // MARK: - Initializers
     
     public init(window: UIWindow, model: RandomizerModel) {
-        let tabBar = UITabBarController()
+        let tabBar = RootTabBarController()
         self.tabBarController = tabBar
         self.childCoordinators = []
         self.model = model
@@ -53,7 +53,6 @@ public class RootNavigator {
         
         let navControllers = self.childCoordinators.map({$0.navigationController})
         self.tabBarController.viewControllers = navControllers
-        self.tabBarController.tabBar.tintColor = .lightBlue
         
         if self.model.playersIsEmpty() {
             self.tabBarController.selectedIndex = Tabs.players.rawValue

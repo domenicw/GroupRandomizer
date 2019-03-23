@@ -1,5 +1,5 @@
 //
-//  PlayerListViewControllerDelegate.swift
+//  PlayersListViewControllerDelegate.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 22.09.18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol PlayerListViewControllerDelegate: RandomizeViewControllerDelegate {
+public protocol PlayersListViewControllerDelegate: RandomizeViewControllerDelegate {
     
     func addPlayer()
     

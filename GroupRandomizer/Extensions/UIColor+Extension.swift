@@ -15,4 +15,12 @@ public extension UIColor {
         return UIColor(named: "lightBlue")!
     }
     
+    public static var gray1: UIColor {
+        return UIColor(named: "gray1-background")!
+    }
+    
+    public static var gray2: UIColor {
+        return UIColor(named: "gray2-image")!
+    }
+    
 }
