@@ -13,4 +13,6 @@ public protocol Navigator {
     
     var navigationController: UINavigationController { get set }
     
+    var childNavigators: [Navigator] { get set }
+    
 }

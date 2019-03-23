@@ -19,15 +19,23 @@ public class PlayerNavigator: Navigator {
     
     public var navigationController: UINavigationController
     
+    public var childNavigators: [Navigator] = []
+    
     // MARK: - Initializers
     
     public init(model: RandomizerModel) {
         let playerController = PlayersListViewController(model: model.players)
-        self.navigationController = UINavigationController(rootViewController: playerController)
+        self.navigationController = ContinuousNavigationController(rootViewController: playerController)
         self.model = model
         self.model.add(delegate: self)
         
         playerController.delegate = self
+    }
+    
+    public func enterCreatePlayer() {
+        let navigator = PlayerCreationNavigator(model: self.model)
+        self.childNavigators.append(navigator)
+        self.navigationController.present(navigator.navigationController, animated: true, completion: nil)
     }
     
 }
@@ -47,6 +55,8 @@ extension PlayerNavigator: RandomizerModelDelegate {
 extension PlayerNavigator: PlayersListViewControllerDelegate {
     
     public func addPlayer() {
+        self.enterCreatePlayer()
+        /*
         let alert = UIAlertController(title: AlertText.addPlayerNameTitle.localized, message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = AlertText.addPlayerNamePlaceholder.localized
@@ -64,6 +74,7 @@ extension PlayerNavigator: PlayersListViewControllerDelegate {
         alert.addAction(cancelAction)
         
         self.navigationController.present(alert, animated: true, completion: nil)
+ */
     }
     
     public func editNameOfPlayer(_ index: Int) {

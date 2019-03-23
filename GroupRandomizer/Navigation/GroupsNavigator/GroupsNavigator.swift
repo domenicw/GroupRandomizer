@@ -19,11 +19,13 @@ public class GroupsNavigator: Navigator {
     
     public var navigationController: UINavigationController
     
+    public var childNavigators: [Navigator] = []
+    
     // MARK: - Initializers
     
     public init(model: RandomizerModel) {
         let groupsController = GroupsListViewController(model: model.groups)
-        self.navigationController = UINavigationController(rootViewController: groupsController)
+        self.navigationController = ContinuousNavigationController(rootViewController: groupsController)
         self.model = model
         self.model.add(delegate: self)
         

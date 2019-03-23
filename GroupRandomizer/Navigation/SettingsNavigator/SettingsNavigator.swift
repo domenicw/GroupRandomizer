@@ -16,6 +16,8 @@ public class SettingsNavigator: Navigator {
     
     public var navigationController: UINavigationController
     
+    public var childNavigators: [Navigator] = []
+    
     public var model: SettingsModel
     
     private var storeHelper: SKIAPHelper

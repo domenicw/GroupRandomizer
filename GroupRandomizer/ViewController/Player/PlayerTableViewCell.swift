@@ -82,7 +82,7 @@ public class PlayerTableViewCell: UITableViewCell {
     
     private func createDetailLabel() -> UILabel {
         let label = UILabel()
-        label.textColor = .gray2
+        label.textColor = .darkGray
         label.font = UIFont.preferredFont(forTextStyle: .footnote)
         label.translatesAutoresizingMaskIntoConstraints = false
         

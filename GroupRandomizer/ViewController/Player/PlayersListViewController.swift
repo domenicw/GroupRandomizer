@@ -147,7 +147,7 @@ extension PlayersListViewController: UITableViewDataSource {
         }
         
         cell.nameLabel.text = self.model[indexPath.row].name
-        cell.detailLabel.text = "Member of 2 grops"
+        cell.detailLabel.text = "Member of 2 groups"
         cell.selectionStyle = .default
         
         return cell
