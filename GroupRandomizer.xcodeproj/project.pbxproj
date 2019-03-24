@@ -7,18 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B022B58622464256003DD766 /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B58522464256003DD766 /* PlayerDetailViewController.swift */; };
 		B022B58922465104003DD766 /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B58822465104003DD766 /* ViewState.swift */; };
 		B022B58B22465124003DD766 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B58A22465124003DD766 /* State.swift */; };
 		B022B58D22465180003DD766 /* ViewStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B58C22465180003DD766 /* ViewStateDelegate.swift */; };
 		B022B590224689C5003DD766 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B58F224689C5003DD766 /* RootTabBarController.swift */; };
 		B022B59222469900003DD766 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59122469900003DD766 /* PlayerTableViewCell.swift */; };
 		B022B5942246CABF003DD766 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5932246CABF003DD766 /* PlayerDetailsViewController.swift */; };
-		B022B5962246CB37003DD766 /* PlayerCreationDataInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5952246CB37003DD766 /* PlayerCreationDataInputView.swift */; };
+		B022B5962246CB37003DD766 /* DataInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5952246CB37003DD766 /* DataInputView.swift */; };
 		B022B5982246D1F1003DD766 /* PlayerDetailsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5972246D1F1003DD766 /* PlayerDetailsViewControllerDelegate.swift */; };
 		B022B59B2246D501003DD766 /* PlayerCreationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59A2246D501003DD766 /* PlayerCreationNavigator.swift */; };
 		B022B59D2246D5AD003DD766 /* ContinuousNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59C2246D5AD003DD766 /* ContinuousNavigationController.swift */; };
-		B022B5A02247AE8F003DD766 /* PlayerCreationAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59F2247AE8F003DD766 /* PlayerCreationAvatarView.swift */; };
+		B022B5A02247AE8F003DD766 /* AvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59F2247AE8F003DD766 /* AvatarView.swift */; };
 		B02CB1482139300E005CAFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1472139300E005CAFBB /* SettingsViewController.swift */; };
 		B02CB14A2139309B005CAFBB /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1492139309B005CAFBB /* SettingsNavigator.swift */; };
 		B02CB14E21393292005CAFBB /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB14D21393292005CAFBB /* SettingsModel.swift */; };
@@ -47,6 +46,8 @@
 		B03252A32159403E0069F350 /* Root.strings in Resources */ = {isa = PBXBuildFile; fileRef = B03252A52159403E0069F350 /* Root.strings */; };
 		B03252AB215941C00069F350 /* AlertText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03252AA215941C00069F350 /* AlertText.swift */; };
 		B03252AC2159431D0069F350 /* Alert.strings in Resources */ = {isa = PBXBuildFile; fileRef = B03252AE2159431D0069F350 /* Alert.strings */; };
+		B051BA0A22482BA900CC766E /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B051BA0922482BA900CC766E /* ActionButton.swift */; };
+		B051BA0C22482C0800CC766E /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B051BA0B22482C0800CC766E /* UIButton+Extension.swift */; };
 		B077ED18212881890001CBAA /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B077ED17212881890001CBAA /* Storage.swift */; };
 		B0A2F352215661E3002C340F /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2F351215661E3002C340F /* UIColor+Extension.swift */; };
 		B0A2F35621566C9A002C340F /* PlayersListViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2F35521566C9A002C340F /* PlayersListViewControllerDelegate.swift */; };
@@ -90,18 +91,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		B022B58522464256003DD766 /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 		B022B58822465104003DD766 /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		B022B58A22465124003DD766 /* State.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		B022B58C22465180003DD766 /* ViewStateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateDelegate.swift; sourceTree = "<group>"; };
 		B022B58F224689C5003DD766 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		B022B59122469900003DD766 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		B022B5932246CABF003DD766 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
-		B022B5952246CB37003DD766 /* PlayerCreationDataInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationDataInputView.swift; sourceTree = "<group>"; };
+		B022B5952246CB37003DD766 /* DataInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataInputView.swift; sourceTree = "<group>"; };
 		B022B5972246D1F1003DD766 /* PlayerDetailsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B022B59A2246D501003DD766 /* PlayerCreationNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationNavigator.swift; sourceTree = "<group>"; };
 		B022B59C2246D5AD003DD766 /* ContinuousNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousNavigationController.swift; sourceTree = "<group>"; };
-		B022B59F2247AE8F003DD766 /* PlayerCreationAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationAvatarView.swift; sourceTree = "<group>"; };
+		B022B59F2247AE8F003DD766 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
 		B02CB1472139300E005CAFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B02CB1492139309B005CAFBB /* SettingsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigator.swift; sourceTree = "<group>"; };
 		B02CB14D21393292005CAFBB /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -140,6 +140,8 @@
 		B03252B0215946060069F350 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
 		B03252B42159467B0069F350 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
 		B03252B52159467D0069F350 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = de; path = de.lproj/Info.plist; sourceTree = "<group>"; };
+		B051BA0922482BA900CC766E /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
+		B051BA0B22482C0800CC766E /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		B077ED17212881890001CBAA /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		B0A2F351215661E3002C340F /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B0A2F35521566C9A002C340F /* PlayersListViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersListViewControllerDelegate.swift; sourceTree = "<group>"; };
@@ -219,8 +221,10 @@
 		B022B59E2247AE61003DD766 /* UI Elements */ = {
 			isa = PBXGroup;
 			children = (
-				B022B5952246CB37003DD766 /* PlayerCreationDataInputView.swift */,
-				B022B59F2247AE8F003DD766 /* PlayerCreationAvatarView.swift */,
+				B051BA0D224832B800CC766E /* Glyphs */,
+				B022B5952246CB37003DD766 /* DataInputView.swift */,
+				B022B59F2247AE8F003DD766 /* AvatarView.swift */,
+				B051BA0922482BA900CC766E /* ActionButton.swift */,
 			);
 			path = "UI Elements";
 			sourceTree = "<group>";
@@ -404,6 +408,13 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		B051BA0D224832B800CC766E /* Glyphs */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Glyphs;
+			sourceTree = "<group>";
+		};
 		B077ED19212881900001CBAA /* Storage */ = {
 			isa = PBXGroup;
 			children = (
@@ -427,7 +438,6 @@
 				B022B5A22247B84D003DD766 /* Player Details */,
 				B022B5A12247B840003DD766 /* Player List */,
 				B022B59E2247AE61003DD766 /* UI Elements */,
-				B022B58522464256003DD766 /* PlayerDetailViewController.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -496,6 +506,7 @@
 				B02CB156213941FF005CAFBB /* Bundle+Extension.swift */,
 				B0D8550E213FC24F004A41ED /* SKProduct+Extension.swift */,
 				B0A2F351215661E3002C340F /* UIColor+Extension.swift */,
+				B051BA0B22482C0800CC766E /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -651,6 +662,7 @@
 				B0BFDD3B2138249900656396 /* PlayerNavigator.swift in Sources */,
 				B03252AB215941C00069F350 /* AlertText.swift in Sources */,
 				B02CB157213941FF005CAFBB /* Bundle+Extension.swift in Sources */,
+				B051BA0C22482C0800CC766E /* UIButton+Extension.swift in Sources */,
 				B0B9686B2124A5BB0002410B /* Group.swift in Sources */,
 				B0A2F352215661E3002C340F /* UIColor+Extension.swift in Sources */,
 				B022B58D22465180003DD766 /* ViewStateDelegate.swift in Sources */,
@@ -669,7 +681,7 @@
 				B02CB1482139300E005CAFBB /* SettingsViewController.swift in Sources */,
 				B0BFDD322137F7F800656396 /* GroupsNavigator.swift in Sources */,
 				B02CB16721394777005CAFBB /* SKIAPHelper.swift in Sources */,
-				B022B5962246CB37003DD766 /* PlayerCreationDataInputView.swift in Sources */,
+				B022B5962246CB37003DD766 /* DataInputView.swift in Sources */,
 				B0ED0D9B2128171900313603 /* GroupsListViewController.swift in Sources */,
 				B0B968722124ACFB0002410B /* Array+Extension.swift in Sources */,
 				B0B9686F2124A7BB0002410B /* Randomizer.swift in Sources */,
@@ -681,15 +693,15 @@
 				B02CB14E21393292005CAFBB /* SettingsModel.swift in Sources */,
 				B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */,
 				B02CB1522139364D005CAFBB /* SettingsCellModel.swift in Sources */,
-				B022B5A02247AE8F003DD766 /* PlayerCreationAvatarView.swift in Sources */,
+				B022B5A02247AE8F003DD766 /* AvatarView.swift in Sources */,
 				B02CB16F21395FAD005CAFBB /* SettingsModelDelegate.swift in Sources */,
 				B02CB150213932CF005CAFBB /* SettingsAction.swift in Sources */,
 				B02CB165213946F0005CAFBB /* SKIAPItem.swift in Sources */,
-				B022B58622464256003DD766 /* PlayerDetailViewController.swift in Sources */,
 				B0B9686D2124A6010002410B /* Player.swift in Sources */,
 				B02CB16B213951E6005CAFBB /* SKRating.swift in Sources */,
 				B022B59D2246D5AD003DD766 /* ContinuousNavigationController.swift in Sources */,
 				B022B59222469900003DD766 /* PlayerTableViewCell.swift in Sources */,
+				B051BA0A22482BA900CC766E /* ActionButton.swift in Sources */,
 				B02CB14A2139309B005CAFBB /* SettingsNavigator.swift in Sources */,
 				B0B9684A2124A5910002410B /* AppDelegate.swift in Sources */,
 				B0D8550F213FC24F004A41ED /* SKProduct+Extension.swift in Sources */,

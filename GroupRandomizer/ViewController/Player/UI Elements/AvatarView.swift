@@ -1,5 +1,5 @@
 //
-//  PlayerCreationAvatarView.swift
+//  AvatarView.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 24.03.19.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class PlayerCreationAvatarView: UIView {
+public class AvatarView: UIView {
     
     // MARK: - Variables
     
@@ -72,7 +72,7 @@ public class PlayerCreationAvatarView: UIView {
         button.titleLabel?.textAlignment = .center
         button.setTitle("+\nAdd Avatar", for: .normal)
         button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.gray1, for: .highlighted)
+        button.setTitleColor(.gray2, for: .highlighted)
         button.setBackgroundImage(UIImage(), for: .normal)
         button.layer.masksToBounds = true
         button.translatesAutoresizingMaskIntoConstraints =  false
@@ -88,15 +88,12 @@ public class PlayerCreationAvatarView: UIView {
         return button
     }()
     
-    public lazy private(set) var removeAvatarButton: UIButton = {
-        let button = UIButton()
+    public lazy private(set) var removeAvatarButton: ActionButton = {
+        let button = ActionButton()
+        button.style = .delete
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.backgroundColor = .red
-        button.setTitle("-", for: .normal)
-        button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
         button.isHidden = true
         button.isEnabled = false
-        button.layer.cornerRadius = 15
         button.addTarget(self, action: #selector(self.removeAvatar), for: .touchUpInside)
         
         return button

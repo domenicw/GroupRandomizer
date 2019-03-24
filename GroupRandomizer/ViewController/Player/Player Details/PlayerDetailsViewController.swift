@@ -52,24 +52,24 @@ public class PlayerDetailsViewController: UIViewController {
     
     // MARK: - View Variables
     
-    public lazy private(set) var avatarImageView: PlayerCreationAvatarView = {
-        let view = PlayerCreationAvatarView()
+    public lazy private(set) var avatarImageView: AvatarView = {
+        let view = AvatarView()
         view.style = .round
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
     
-    lazy public private(set) var nameInputView: PlayerCreationDataInputView = {
-        let view = PlayerCreationDataInputView()
+    lazy public private(set) var nameInputView: DataInputView = {
+        let view = DataInputView()
         view.titleLabel.text = "Name"
         view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
     
-    lazy public private(set) var detailInputView: PlayerCreationDataInputView = {
-        let view = PlayerCreationDataInputView()
+    lazy public private(set) var detailInputView: DataInputView = {
+        let view = DataInputView()
         view.titleLabel.text = "Details"
         view.translatesAutoresizingMaskIntoConstraints = false
         
@@ -79,7 +79,7 @@ public class PlayerDetailsViewController: UIViewController {
     lazy public private(set) var addButton: UIButton = {
         let button = UIButton()
         button.setTitle("Add Player", for: .normal)
-        button.backgroundColor = UIColor.lightBlue
+        button.setBackgroundColor(.lightBlue, for: .normal)
         button.layer.cornerRadius = 15
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.gray1, for: .highlighted)

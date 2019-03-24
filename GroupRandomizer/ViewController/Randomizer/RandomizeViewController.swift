@@ -47,7 +47,7 @@ public class RandomizeViewController: UIViewController {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle(RandomizeText.randomizeButtonTitle.localized, for: .normal)
-        button.backgroundColor = .lightBlue
+        button.setBackgroundColor(.lightBlue, for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.setTitleColor(.lightGray, for: .highlighted)
         button.layer.cornerRadius = 15

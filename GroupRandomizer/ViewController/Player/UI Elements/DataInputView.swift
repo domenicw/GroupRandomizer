@@ -1,5 +1,5 @@
 //
-//  PlayerCreationDataInputView.swift
+//  DataInputView.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 23.03.19.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class PlayerCreationDataInputView: UIView {
+public class DataInputView: UIView {
     
     // MARK: - Variables
     
