@@ -17,6 +17,16 @@ public class PlayerCreationViewController: UIViewController {
     
     // MARK: - View Variables
     
+    public lazy private(set) var avatarImageView: PlayerCreationAvatarView = {
+        let view = PlayerCreationAvatarView()
+        view.style = .round
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        self.view.addSubview(view)
+        
+        return view
+    }()
+    
     public private(set) var nameInputView: PlayerCreationDataInputView!
     
     public private(set) var detailInputView: PlayerCreationDataInputView!
@@ -39,11 +49,13 @@ public class PlayerCreationViewController: UIViewController {
         self.addButton = self.createAddButton()
         self.view.addSubview(self.addButton)
         
+        self.applyAvatarImageViewConstraints()
         self.applyNameInputViewConstraints()
         self.applyDetailInputViewConstraints()
         self.applyAddButtonConstraints()
         
         self.createCancelBarButton()
+        self.setupFirstResponder()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -52,8 +64,12 @@ public class PlayerCreationViewController: UIViewController {
     
     // MARK: - View Creation
     
-    private func createAvatarView() {
-        
+    private func applyAvatarImageViewConstraints() {
+        self.avatarImageView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 30).isActive = true
+        self.avatarImageView.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.layoutMarginsGuide.leadingAnchor).isActive = true
+        self.avatarImageView.trailingAnchor.constraint(lessThanOrEqualTo: self.view.layoutMarginsGuide.trailingAnchor).isActive = true
+        self.avatarImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        self.avatarImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
     }
     
     private func createDataInputView() -> PlayerCreationDataInputView {
@@ -64,7 +80,7 @@ public class PlayerCreationViewController: UIViewController {
     }
     
     private func applyNameInputViewConstraints() {
-        self.nameInputView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 30).isActive = true
+        self.nameInputView.topAnchor.constraint(equalTo: self.avatarImageView.bottomAnchor, constant: 30).isActive = true
         self.nameInputView.leadingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leadingAnchor).isActive = true
         self.nameInputView.trailingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.trailingAnchor).isActive = true
     }
@@ -102,6 +118,12 @@ public class PlayerCreationViewController: UIViewController {
     
     // MARK: - View Setup
     
+    private func setupFirstResponder() {
+        let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.hideKeyboard))
+        recognizer.numberOfTapsRequired = 1
+        self.view.addGestureRecognizer(recognizer)
+    }
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -110,6 +132,11 @@ public class PlayerCreationViewController: UIViewController {
     }
     
     // MARK: - View Interaction
+    
+    @objc private func hideKeyboard() {
+        self.nameInputView.dataInputTextView.resignFirstResponder()
+        self.detailInputView.dataInputTextView.resignFirstResponder()
+    }
     
     @objc private func addPlayer() {
         self.delegate?.addPlayer(with: self.nameInputView.dataInputTextView.text!)

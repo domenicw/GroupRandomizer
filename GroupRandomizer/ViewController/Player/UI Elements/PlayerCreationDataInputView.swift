@@ -30,8 +30,6 @@ public class PlayerCreationDataInputView: UIView {
         self.dataInputTextView = self.createDataInputTextView()
         self.addSubview(self.dataInputTextView)
         
-        
-        
         self.applyTitleLabelConstraints()
         self.applyDataInputTextView()
         self.setBackgroundAppearance()

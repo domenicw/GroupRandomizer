@@ -18,6 +18,7 @@
 		B022B5982246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5972246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift */; };
 		B022B59B2246D501003DD766 /* PlayerCreationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59A2246D501003DD766 /* PlayerCreationNavigator.swift */; };
 		B022B59D2246D5AD003DD766 /* ContinuousNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59C2246D5AD003DD766 /* ContinuousNavigationController.swift */; };
+		B022B5A02247AE8F003DD766 /* PlayerCreationAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59F2247AE8F003DD766 /* PlayerCreationAvatarView.swift */; };
 		B02CB1482139300E005CAFBB /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1472139300E005CAFBB /* SettingsViewController.swift */; };
 		B02CB14A2139309B005CAFBB /* SettingsNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB1492139309B005CAFBB /* SettingsNavigator.swift */; };
 		B02CB14E21393292005CAFBB /* SettingsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B02CB14D21393292005CAFBB /* SettingsModel.swift */; };
@@ -100,6 +101,7 @@
 		B022B5972246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B022B59A2246D501003DD766 /* PlayerCreationNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationNavigator.swift; sourceTree = "<group>"; };
 		B022B59C2246D5AD003DD766 /* ContinuousNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousNavigationController.swift; sourceTree = "<group>"; };
+		B022B59F2247AE8F003DD766 /* PlayerCreationAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationAvatarView.swift; sourceTree = "<group>"; };
 		B02CB1472139300E005CAFBB /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B02CB1492139309B005CAFBB /* SettingsNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsNavigator.swift; sourceTree = "<group>"; };
 		B02CB14D21393292005CAFBB /* SettingsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModel.swift; sourceTree = "<group>"; };
@@ -212,6 +214,34 @@
 				B022B59A2246D501003DD766 /* PlayerCreationNavigator.swift */,
 			);
 			path = PlayerCreationNavigator;
+			sourceTree = "<group>";
+		};
+		B022B59E2247AE61003DD766 /* UI Elements */ = {
+			isa = PBXGroup;
+			children = (
+				B022B5952246CB37003DD766 /* PlayerCreationDataInputView.swift */,
+				B022B59F2247AE8F003DD766 /* PlayerCreationAvatarView.swift */,
+			);
+			path = "UI Elements";
+			sourceTree = "<group>";
+		};
+		B022B5A12247B840003DD766 /* Player List */ = {
+			isa = PBXGroup;
+			children = (
+				B0ED0D962127387C00313603 /* PlayersListViewController.swift */,
+				B0A2F35521566C9A002C340F /* PlayersListViewControllerDelegate.swift */,
+				B022B59122469900003DD766 /* PlayerTableViewCell.swift */,
+			);
+			path = "Player List";
+			sourceTree = "<group>";
+		};
+		B022B5A22247B84D003DD766 /* Player Creation */ = {
+			isa = PBXGroup;
+			children = (
+				B022B5932246CABF003DD766 /* PlayerCreationViewController.swift */,
+				B022B5972246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift */,
+			);
+			path = "Player Creation";
 			sourceTree = "<group>";
 		};
 		B02CB14B21393274005CAFBB /* Model */ = {
@@ -394,13 +424,10 @@
 		B0A2F35421566C80002C340F /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				B0ED0D962127387C00313603 /* PlayersListViewController.swift */,
-				B0A2F35521566C9A002C340F /* PlayersListViewControllerDelegate.swift */,
+				B022B5A22247B84D003DD766 /* Player Creation */,
+				B022B5A12247B840003DD766 /* Player List */,
+				B022B59E2247AE61003DD766 /* UI Elements */,
 				B022B58522464256003DD766 /* PlayerDetailViewController.swift */,
-				B022B59122469900003DD766 /* PlayerTableViewCell.swift */,
-				B022B5932246CABF003DD766 /* PlayerCreationViewController.swift */,
-				B022B5972246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift */,
-				B022B5952246CB37003DD766 /* PlayerCreationDataInputView.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -654,6 +681,7 @@
 				B02CB14E21393292005CAFBB /* SettingsModel.swift in Sources */,
 				B0BFDD362138181800656396 /* RandomizerModelDelegate.swift in Sources */,
 				B02CB1522139364D005CAFBB /* SettingsCellModel.swift in Sources */,
+				B022B5A02247AE8F003DD766 /* PlayerCreationAvatarView.swift in Sources */,
 				B02CB16F21395FAD005CAFBB /* SettingsModelDelegate.swift in Sources */,
 				B02CB150213932CF005CAFBB /* SettingsAction.swift in Sources */,
 				B02CB165213946F0005CAFBB /* SKIAPItem.swift in Sources */,

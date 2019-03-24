@@ -35,6 +35,7 @@ public class PlayerNavigator: Navigator {
     public func enterCreatePlayer() {
         let navigator = PlayerCreationNavigator(model: self.model)
         self.childNavigators.append(navigator)
+        navigator.navigationController.modalPresentationStyle = .formSheet
         self.navigationController.present(navigator.navigationController, animated: true, completion: nil)
     }
     
