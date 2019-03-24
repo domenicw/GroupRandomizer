@@ -13,9 +13,9 @@
 		B022B58D22465180003DD766 /* ViewStateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B58C22465180003DD766 /* ViewStateDelegate.swift */; };
 		B022B590224689C5003DD766 /* RootTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B58F224689C5003DD766 /* RootTabBarController.swift */; };
 		B022B59222469900003DD766 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59122469900003DD766 /* PlayerTableViewCell.swift */; };
-		B022B5942246CABF003DD766 /* PlayerCreationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5932246CABF003DD766 /* PlayerCreationViewController.swift */; };
+		B022B5942246CABF003DD766 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5932246CABF003DD766 /* PlayerDetailsViewController.swift */; };
 		B022B5962246CB37003DD766 /* PlayerCreationDataInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5952246CB37003DD766 /* PlayerCreationDataInputView.swift */; };
-		B022B5982246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5972246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift */; };
+		B022B5982246D1F1003DD766 /* PlayerDetailsViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B5972246D1F1003DD766 /* PlayerDetailsViewControllerDelegate.swift */; };
 		B022B59B2246D501003DD766 /* PlayerCreationNavigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59A2246D501003DD766 /* PlayerCreationNavigator.swift */; };
 		B022B59D2246D5AD003DD766 /* ContinuousNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59C2246D5AD003DD766 /* ContinuousNavigationController.swift */; };
 		B022B5A02247AE8F003DD766 /* PlayerCreationAvatarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B022B59F2247AE8F003DD766 /* PlayerCreationAvatarView.swift */; };
@@ -96,9 +96,9 @@
 		B022B58C22465180003DD766 /* ViewStateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewStateDelegate.swift; sourceTree = "<group>"; };
 		B022B58F224689C5003DD766 /* RootTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootTabBarController.swift; sourceTree = "<group>"; };
 		B022B59122469900003DD766 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
-		B022B5932246CABF003DD766 /* PlayerCreationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationViewController.swift; sourceTree = "<group>"; };
+		B022B5932246CABF003DD766 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		B022B5952246CB37003DD766 /* PlayerCreationDataInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationDataInputView.swift; sourceTree = "<group>"; };
-		B022B5972246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationViewControllerDelegate.swift; sourceTree = "<group>"; };
+		B022B5972246D1F1003DD766 /* PlayerDetailsViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewControllerDelegate.swift; sourceTree = "<group>"; };
 		B022B59A2246D501003DD766 /* PlayerCreationNavigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationNavigator.swift; sourceTree = "<group>"; };
 		B022B59C2246D5AD003DD766 /* ContinuousNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContinuousNavigationController.swift; sourceTree = "<group>"; };
 		B022B59F2247AE8F003DD766 /* PlayerCreationAvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCreationAvatarView.swift; sourceTree = "<group>"; };
@@ -235,13 +235,13 @@
 			path = "Player List";
 			sourceTree = "<group>";
 		};
-		B022B5A22247B84D003DD766 /* Player Creation */ = {
+		B022B5A22247B84D003DD766 /* Player Details */ = {
 			isa = PBXGroup;
 			children = (
-				B022B5932246CABF003DD766 /* PlayerCreationViewController.swift */,
-				B022B5972246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift */,
+				B022B5932246CABF003DD766 /* PlayerDetailsViewController.swift */,
+				B022B5972246D1F1003DD766 /* PlayerDetailsViewControllerDelegate.swift */,
 			);
-			path = "Player Creation";
+			path = "Player Details";
 			sourceTree = "<group>";
 		};
 		B02CB14B21393274005CAFBB /* Model */ = {
@@ -424,7 +424,7 @@
 		B0A2F35421566C80002C340F /* Player */ = {
 			isa = PBXGroup;
 			children = (
-				B022B5A22247B84D003DD766 /* Player Creation */,
+				B022B5A22247B84D003DD766 /* Player Details */,
 				B022B5A12247B840003DD766 /* Player List */,
 				B022B59E2247AE61003DD766 /* UI Elements */,
 				B022B58522464256003DD766 /* PlayerDetailViewController.swift */,
@@ -658,7 +658,7 @@
 				B0BFDD3F21382A0500656396 /* RootNavigatorDelegate.swift in Sources */,
 				B0BFDD302137EDD000656396 /* RootNavigator.swift in Sources */,
 				B02CB15421393659005CAFBB /* SettingsSectionModel.swift in Sources */,
-				B022B5942246CABF003DD766 /* PlayerCreationViewController.swift in Sources */,
+				B022B5942246CABF003DD766 /* PlayerDetailsViewController.swift in Sources */,
 				B02CB169213950C7005CAFBB /* SKStoreDelegate.swift in Sources */,
 				B0BFDD342137FA1F00656396 /* RandomizerModel.swift in Sources */,
 				B0325282215935ED0069F350 /* PlayersText.swift in Sources */,
@@ -698,7 +698,7 @@
 				B0ED0D972127387C00313603 /* PlayersListViewController.swift in Sources */,
 				B0A2F35821566E82002C340F /* GroupsListViewControllerDelegate.swift in Sources */,
 				B02CB16D213956CE005CAFBB /* SettingsCellType.swift in Sources */,
-				B022B5982246D1F1003DD766 /* PlayerCreationViewControllerDelegate.swift in Sources */,
+				B022B5982246D1F1003DD766 /* PlayerDetailsViewControllerDelegate.swift in Sources */,
 				B0325284215936370069F350 /* Localizable.swift in Sources */,
 				B03252872159392F0069F350 /* RandomizeText.swift in Sources */,
 				B077ED18212881890001CBAA /* Storage.swift in Sources */,

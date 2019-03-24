@@ -1,5 +1,5 @@
 //
-//  PlayerCreationViewController.swift
+//  PlayerDetailsViewController.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 23.03.19.
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public class PlayerCreationViewController: UIViewController {
+public class PlayerDetailsViewController: UIViewController {
     
     // MARK: - Variables
     
@@ -48,7 +48,7 @@ public class PlayerCreationViewController: UIViewController {
         }
     }
     
-    public var delegate: PlayerCreationViewControllerDelegate?
+    public var delegate: PlayerDetailsViewControllerDelegate?
     
     // MARK: - View Variables
     
@@ -57,40 +57,44 @@ public class PlayerCreationViewController: UIViewController {
         view.style = .round
         view.translatesAutoresizingMaskIntoConstraints = false
         
-        self.view.addSubview(view)
+        return view
+    }()
+    
+    lazy public private(set) var nameInputView: PlayerCreationDataInputView = {
+        let view = PlayerCreationDataInputView()
+        view.titleLabel.text = "Name"
+        view.translatesAutoresizingMaskIntoConstraints = false
         
         return view
     }()
     
-    public private(set) var nameInputView: PlayerCreationDataInputView!
+    lazy public private(set) var detailInputView: PlayerCreationDataInputView = {
+        let view = PlayerCreationDataInputView()
+        view.titleLabel.text = "Details"
+        view.translatesAutoresizingMaskIntoConstraints = false
+        
+        return view
+    }()
     
-    public private(set) var detailInputView: PlayerCreationDataInputView!
-    
-    public private(set) var addButton: UIButton!
+    lazy public private(set) var addButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add Player", for: .normal)
+        button.backgroundColor = UIColor.lightBlue
+        button.layer.cornerRadius = 15
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.gray1, for: .highlighted)
+        button.addTarget(self, action: #selector(self.addPlayer), for: .touchUpInside)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        
+        return button
+    }()
     
     // MARK: - Initializers
     
     public init() {
         super.init(nibName: nil, bundle: nil)
         
-        self.nameInputView = self.createDataInputView()
-        self.nameInputView.titleLabel.text = "Name"
-        self.view.addSubview(self.nameInputView)
-        
-        self.detailInputView = self.createDataInputView()
-        self.detailInputView.titleLabel.text = "Details"
-        self.view.addSubview(self.detailInputView)
-        
-        self.addButton = self.createAddButton()
-        self.view.addSubview(self.addButton)
-        
-        self.applyAvatarImageViewConstraints()
-        self.applyNameInputViewConstraints()
-        self.applyDetailInputViewConstraints()
-        self.applyAddButtonConstraints()
-        
-        self.createCancelBarButton()
-        self.setupFirstResponder()
+        self.setupView()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -99,19 +103,29 @@ public class PlayerCreationViewController: UIViewController {
     
     // MARK: - View Creation
     
+    private func setupView() {
+        // Add all subviews to view
+        self.view.addSubview(self.avatarImageView)
+        self.view.addSubview(self.nameInputView)
+        self.view.addSubview(self.detailInputView)
+        self.view.addSubview(self.addButton)
+        
+        // Set constraints
+        self.applyAvatarImageViewConstraints()
+        self.applyNameInputViewConstraints()
+        self.applyDetailInputViewConstraints()
+        self.applyAddButtonConstraints()
+        
+        // Create and add cancel button
+        self.createCancelBarButton()
+    }
+    
     private func applyAvatarImageViewConstraints() {
         self.avatarImageView.topAnchor.constraint(equalTo: self.view.layoutMarginsGuide.topAnchor, constant: 30).isActive = true
         self.avatarImageView.leadingAnchor.constraint(greaterThanOrEqualTo: self.view.layoutMarginsGuide.leadingAnchor).isActive = true
         self.avatarImageView.trailingAnchor.constraint(lessThanOrEqualTo: self.view.layoutMarginsGuide.trailingAnchor).isActive = true
         self.avatarImageView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         self.avatarImageView.heightAnchor.constraint(equalToConstant: 120).isActive = true
-    }
-    
-    private func createDataInputView() -> PlayerCreationDataInputView {
-        let view = PlayerCreationDataInputView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        
-        return view
     }
     
     private func applyNameInputViewConstraints() {
@@ -126,19 +140,6 @@ public class PlayerCreationViewController: UIViewController {
         self.detailInputView.trailingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.trailingAnchor).isActive = true
     }
     
-    private func createAddButton() -> UIButton {
-        let button = UIButton()
-        button.setTitle("Add Player", for: .normal)
-        button.backgroundColor = UIColor.lightBlue
-        button.layer.cornerRadius = 15
-        button.setTitleColor(.white, for: .normal)
-        button.setTitleColor(.gray1, for: .highlighted)
-        button.addTarget(self, action: #selector(self.addPlayer), for: .touchUpInside)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        
-        return button
-    }
-    
     private func applyAddButtonConstraints() {
         self.addButton.bottomAnchor.constraint(equalTo: self.view.layoutMarginsGuide.bottomAnchor).isActive = true
         self.addButton.leadingAnchor.constraint(equalTo: self.view.layoutMarginsGuide.leadingAnchor).isActive = true
@@ -147,7 +148,7 @@ public class PlayerCreationViewController: UIViewController {
     }
     
     private func createCancelBarButton() {
-        let barButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelCreation))
+        let barButton = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(self.cancelView))
         self.navigationItem.leftBarButtonItem = barButton
     }
     
@@ -164,10 +165,13 @@ public class PlayerCreationViewController: UIViewController {
         
         self.view.backgroundColor = .white
         self.title = "Create New Player"
+        
+        self.setupFirstResponder()
     }
     
     public func setup(with player: Player) {
         self.nameInputView.dataInputTextView.text = player.name
+        self.title = player.name
     }
     
     // MARK: - View Interaction
@@ -180,11 +184,11 @@ public class PlayerCreationViewController: UIViewController {
     @objc private func addPlayer() {
         if let name = self.nameInputView.dataInputTextView.text {
             let player = Player(name: name)
-            self.delegate?.add(player)
+            self.delegate?.save(player)
         }
     }
     
-    @objc private func cancelCreation() {
-        self.delegate?.cancelCreation()
+    @objc private func cancelView() {
+        self.delegate?.cancel()
     }
 }

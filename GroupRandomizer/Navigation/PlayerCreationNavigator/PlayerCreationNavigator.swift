@@ -23,7 +23,7 @@ public class PlayerCreationNavigator: Navigator {
     
     public init(model: RandomizerModel) {
         self.model = model
-        let playerCreationController = PlayerCreationViewController()
+        let playerCreationController = PlayerDetailsViewController()
         playerCreationController.state = .newPlayer
         self.navigationController = ContinuousNavigationController(rootViewController: playerCreationController)
         
@@ -36,14 +36,14 @@ public class PlayerCreationNavigator: Navigator {
     
 }
 
-extension PlayerCreationNavigator: PlayerCreationViewControllerDelegate {
+extension PlayerCreationNavigator: PlayerDetailsViewControllerDelegate {
     
-    public func add(_ player: Player) {
+    public func save(_ player: Player) {
         self.model.players.append(player)
         self.dismissNavigator()
     }
     
-    public func cancelCreation() {
+    public func cancel() {
         self.dismissNavigator()
     }
     

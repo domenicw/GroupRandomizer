@@ -1,5 +1,5 @@
 //
-//  PlayerCreationViewControllerDelegate.swift
+//  PlayerDetailsViewControllerDelegate.swift
 //  GroupRandomizer
 //
 //  Created by Domenic Wüthrich on 23.03.19.
@@ -8,10 +8,10 @@
 
 import Foundation
 
-public protocol PlayerCreationViewControllerDelegate {
+public protocol PlayerDetailsViewControllerDelegate {
     
-    func add(_ player: Player)
+    func save(_ player: Player)
     
-    func cancelCreation()
+    func cancel()
     
 }

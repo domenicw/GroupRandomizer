@@ -40,7 +40,7 @@ public class PlayerNavigator: Navigator {
     }
     
     public func showPlayerDetails(_ player: Player) {
-        let playerViewController = PlayerCreationViewController()
+        let playerViewController = PlayerDetailsViewController()
         playerViewController.state = .default
         playerViewController.delegate = self
         playerViewController.setup(with: player)
@@ -81,13 +81,13 @@ extension PlayerNavigator: PlayersListViewControllerDelegate {
     
 }
 
-extension PlayerNavigator: PlayerCreationViewControllerDelegate {
+extension PlayerNavigator: PlayerDetailsViewControllerDelegate {
     
-    public func add(_ player: Player) {
+    public func save(_ player: Player) {
         self.model.players.append(player)
     }
     
-    public func cancelCreation() {
+    public func cancel() {
         self.navigationController.popViewController(animated: true)
     }
     
