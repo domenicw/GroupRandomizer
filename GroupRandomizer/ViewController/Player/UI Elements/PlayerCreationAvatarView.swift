@@ -25,6 +25,36 @@ public class PlayerCreationAvatarView: UIView {
         }
     }
     
+    public enum State {
+        case editable
+        case `default`
+    }
+    
+    public var state: State = .default {
+        didSet {
+            var addHidden = false
+            var removeHidden = true
+            switch state {
+            case .default:
+                addHidden = true
+                removeHidden = true
+            case .editable:
+                if let _ = self.avatarImageView.image {
+                    addHidden = true
+                    removeHidden = false
+                } else {
+                    addHidden = false
+                    removeHidden = true
+                }
+            }
+            
+            self.addAvatarButton.isHidden = addHidden
+            self.addAvatarButton.isEnabled = !addHidden
+            self.removeAvatarButton.isHidden = removeHidden
+            self.removeAvatarButton.isEnabled = !removeHidden
+        }
+    }
+    
     // MARK: - View Variables
     
     public lazy private(set) var avatarImageView: UIImageView = {
@@ -79,7 +109,7 @@ public class PlayerCreationAvatarView: UIView {
         
         self.addSubviewElements()
         self.applyElementConstraints()
-        self.removeAvatar()
+        self.state = .editable
     }
     
     required init?(coder aDecoder: NSCoder) {

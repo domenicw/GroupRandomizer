@@ -24,6 +24,7 @@ public class PlayerCreationNavigator: Navigator {
     public init(model: RandomizerModel) {
         self.model = model
         let playerCreationController = PlayerCreationViewController()
+        playerCreationController.state = .newPlayer
         self.navigationController = ContinuousNavigationController(rootViewController: playerCreationController)
         
         playerCreationController.delegate = self
@@ -37,8 +38,7 @@ public class PlayerCreationNavigator: Navigator {
 
 extension PlayerCreationNavigator: PlayerCreationViewControllerDelegate {
     
-    public func addPlayer(with name: String) {
-        let player = Player(name: name)
+    public func add(_ player: Player) {
         self.model.players.append(player)
         self.dismissNavigator()
     }

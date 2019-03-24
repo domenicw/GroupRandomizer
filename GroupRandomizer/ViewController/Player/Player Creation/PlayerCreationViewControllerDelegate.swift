@@ -10,7 +10,7 @@ import Foundation
 
 public protocol PlayerCreationViewControllerDelegate {
     
-    func addPlayer(with name: String)
+    func add(_ player: Player)
     
     func cancelCreation()
     

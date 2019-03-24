@@ -13,6 +13,41 @@ public class PlayerCreationViewController: UIViewController {
     
     // MARK: - Variables
     
+    public enum State {
+        case `default`
+        case edit
+        case newPlayer
+    }
+    
+    public var state: State = .default {
+        didSet {
+            switch state {
+            case .default:
+                self.addButton.isEnabled = false
+                self.addButton.isHidden = true
+                self.avatarImageView.state = .default
+                self.nameInputView.dataInputTextView.isUserInteractionEnabled = false
+                self.detailInputView.dataInputTextView.isUserInteractionEnabled = false
+                self.navigationItem.leftBarButtonItem = nil
+            case .edit:
+                self.addButton.isEnabled = true
+                self.addButton.isHidden = false
+                self.avatarImageView.state = .editable
+                self.nameInputView.dataInputTextView.isUserInteractionEnabled = true
+                self.detailInputView.dataInputTextView.isUserInteractionEnabled = true
+                self.addButton.setTitle("Save Player", for: .normal)
+                self.navigationItem.leftBarButtonItem = nil
+            case .newPlayer:
+                self.addButton.isEnabled = true
+                self.addButton.isHidden = false
+                self.avatarImageView.state = .editable
+                self.nameInputView.dataInputTextView.isUserInteractionEnabled = true
+                self.detailInputView.dataInputTextView.isUserInteractionEnabled = true
+                self.addButton.setTitle("Add Player", for: .normal)
+            }
+        }
+    }
+    
     public var delegate: PlayerCreationViewControllerDelegate?
     
     // MARK: - View Variables
@@ -131,6 +166,10 @@ public class PlayerCreationViewController: UIViewController {
         self.title = "Create New Player"
     }
     
+    public func setup(with player: Player) {
+        self.nameInputView.dataInputTextView.text = player.name
+    }
+    
     // MARK: - View Interaction
     
     @objc private func hideKeyboard() {
@@ -139,7 +178,10 @@ public class PlayerCreationViewController: UIViewController {
     }
     
     @objc private func addPlayer() {
-        self.delegate?.addPlayer(with: self.nameInputView.dataInputTextView.text!)
+        if let name = self.nameInputView.dataInputTextView.text {
+            let player = Player(name: name)
+            self.delegate?.add(player)
+        }
     }
     
     @objc private func cancelCreation() {

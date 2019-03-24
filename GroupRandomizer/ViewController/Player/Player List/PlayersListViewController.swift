@@ -117,11 +117,7 @@ extension PlayersListViewController: UITableViewDelegate {
     }
     
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //self.changeNameOfPlayer(index: indexPath.row)
-        let playerViewController = PlayerDetailViewController()
-        playerViewController.nameTextField.text = self.model[indexPath.row].name
-        self.navigationController?.pushViewController(playerViewController, animated: true)
-        
+        self.changeNameOfPlayer(index: indexPath.row)
         
         self.tableView.deselectRow(at: indexPath, animated: true)
     }
